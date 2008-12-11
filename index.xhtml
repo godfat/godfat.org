@@ -13,58 +13,127 @@
     }
     li{
       margin: 2.5pt;
+      padding-top: 5pt;
     }
     br{
       margin: 2.5pt;
+    }
+    blockquote{
+      font-style: oblique;
+    }
+    #header{
+      font-weight: bold;
+    }
+    #news p{
+      background-color: lightgray;
+      padding: 5pt;
+    }
+    #projects li{
+      padding-top: 10pt;
+    }
+    #sig{
+      text-align: right;
     }
   </style>
   <title>飽和脂肪星 - 目錄</title>
 </head>
 <body>
-  <div>
-    2007.08.23<br/>
-    [公告] <del>godfat.idv.tw</del> 將慢慢捨棄，也不建議使用 <del>godfat.tw</del>,<br/>
-    可設定的東西也不夠多, 以後將完全使用 <strong><em>godfat.org</em></strong>
+
+  <div id="header">godfat.org</div>
+
+  <div id="news">
+    <p>
+      2008-12-12<br/>
+      website renewal, this page was put to github.
+      <a href="http://github.com/godfat/godfat.org">soruce code</a><br/>
+      i would list anything i involed here. you can contact me via
+      <a href="http://github.com/godfat">github</a>.
+    </p>
+
+    <p>
+     2007.08.23<br/>
+     [公告] <del>godfat.idv.tw</del> 將慢慢捨棄，也不建議使用 <del>godfat.tw</del>,<br/>
+      可設定的東西也不夠多, 以後將完全使用 <strong><em>godfat.org</em></strong>
+    </p>
   </div>
+
   <hr/>
-  <div>web sites:</div>
+  <div>websites:</div>
   <div>
     <ul>
-      <li>飽和脂肪星 - 目錄 &lt;就是這&gt;</li>
-      <li><a href="http://phpbb.godfat.org/">飽和脂肪星</a> - phpbb &lt;通常連不上&gt; http://phpbb.godfat.org</li>
-      <li><a href="http://blogger.godfat.org/">星之一角</a></li>
-      <li><a href="http://redmine.godfat.org/">紅雷</a></li>
-      <li>星之水餃 &lt;server down...&gt; http://forum.godfat.org (beast)</li>
-      <li>星之肉腳 &lt;server down...&gt; http://wiki.godfat.org (moin moin)</li>
+      <li>飽和脂肪星 planet of satured fat - 目錄 index &lt;就是這 here it is.&gt;</li>
+      <li><a href="http://phpbb.godfat.org/">飽和脂肪星</a> - &lt;通常連不上 usually down&gt;</li>
+      <li><a href="http://blogger.godfat.org/">星之一角</a> a corner of the planet</li>
+      <li>
+        <a href="http://flolac.iis.sinica.edu.tw/lambdawan/">嵐達網</a>
+        - 程式語言同好的中文社群網站
+      </li>
+      <li><a href="http://redmine.godfat.org/">紅雷</a> red lightning</li>
+      <li>星之水餃 &lt;server down...&gt; (beast)</li>
+      <li>星之肉腳 &lt;server down...&gt; (moin moin)</li>
     </ul>
    </div>
 
    <div>projects:</div>
-   <div>
+   <div id="projects">
      <ul>
-       <li><a href="https://redmine.godfat.org/projects/show/spellbook">spellbook 魔法書</a> https://redmine.godfat.org/projects/show/spellbook</li>
-       <li><a href="https://redmine.godfat.org/projects/show/ludy">ludy</a> - https://redmine.godfat.org/projects/show/ludy
-         <ul>
-           <li>或 <a href="http://ludy.rubyforge.org/">rdoc</a></li>
-           <li>或 <a href="http://rubyforge.org/projects/ludy">rubyforge</a></li>
-           <li>或 <a href="http://github.com/godfat/ludy">github</a></li>
-         </ul>
+
+       <li>
+         <a href="http://github.com/godfat/pagify">pagify</a> -
+         pagination tools for plain Ruby, DataMapper, ActiveRecord, and other ORM.
        </li>
-       <li><a href="https://redmine.godfat.org/projects/show/cubeat">CuBeat</a> - https://redmine.godfat.org/projects/show/cubeat
-         <ul>
-           <li>或 <a href="http://shooting-cubes.googlecode.com/">googlecode</a></li>
-           <li>或 <a href="http://github.com/godfat/cubeat">github</a></li>
-         </ul>
+
+       <li>
+         <a href="http://github.com/godfat/friendly_format">friendly_format</a> -
+         make user input be valid xhtml and format it with gsub("\n", "&lt;br/&gt;") etc.
+         <blockquote>&gt; sudo gem install friendly_format</blockquote>
        </li>
+
+       <li>
+         <a href="http://github.com/godfat/dm-mapping">dm-mapping</a> -
+         DataMapper plugin that helps you manipulate an existing database.
+         <blockquote>&gt; sudo gem install dm-mapping</blockquote>
+       </li>
+
+       <li>
+         <a href="http://github.com/godfat/thumbo">thumbo</a> -
+         create thumbnails via RMagick
+       </li>
+
+       <li>
+         <a href="http://github.com/godfat/source-tools">source-tools</a> -
+         source code formatting tools
+       </li>
+
+       <li>
+         <a href="http://github.com/godfat/app-deploy">app-deploy</a> -
+         rake tasks for deployment
+       </li>
+
+       <li>
+         <a href="http://github.com/godfat/cubeat">CuBeat</a> -
+         a puyopuyo-like game (actually looks more like Panel de Pon, Meteos and Lumines).
+       </li>
+
+       <li>
+         <a href="http://rubyforge.org/projects/ludy">ludy</a>
+       </li>
+
+       <li>
+         <a href="https://redmine.godfat.org/projects/show/spellbook">spellbook 魔法書</a>
+       </li>
+
      </ul>
    </div>
 
+  <div id="sig">Lin Jen-Shin (a.k.a. godfat 真常)</div>
+
   <hr/>
-  <div>&copy; 2008 godfat.org<br/>可透過 godfat 阿特 godfat 大特 org 聯絡我</div>
+  <div>&copy; 2008 godfat.org, simple and clean</div>
 
   <div>
     <a href="http://validator.w3.org/check?uri=referer">
-      <img style="border: 0pt none ; width: 88px; height: 31px;" 
+      <img style="border: 0pt none ; width: 88px; height: 31px;"
            src="http://www.w3.org/Icons/valid-xhtml11-blue"
            alt="Valid XHTML 1.1" height="31" width="88"/></a>
 
