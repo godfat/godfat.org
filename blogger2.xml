@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <b:include data='blog' name='all-head-content'/>
+      <title><data:blog.pageTitle/></title>
+    <b:skin><![CDATA[/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Minima Black
+Designer: Douglas Bowman
+URL:      www.stopdesign.com
+Date:     26 Feb 2004
+Updated by: Blogger Team
+
+Modified By
+Designer: Charlemagne Stavanger
+URL: http://www.blogcrowds.com/
+Support: http://www.blogcrowds.com/
+
+modified by godfat
+refer: http://blogger.godfat.org/
+----------------------------------------------- */
+
+/* Variable definitions
+   ====================
+   <Variable name="bgcolor" description="Page Background Color"
+             type="color" default="#000" value="#000000">
+   <Variable name="textcolor" description="Text Color"
+             type="color" default="#bbb" value="#bbbbbb">
+   <Variable name="linkcolor" description="Link Color"
+             type="color" default="#9ad" value="#99aadd">
+   <Variable name="pagetitlecolor" description="Blog Title Color"
+             type="color" default="#ccc" value="#cccccc">
+   <Variable name="descriptioncolor" description="Blog Description Color"
+             type="color" default="#777" value="#777777">
+   <Variable name="titlecolor" description="Post Title Color"
+             type="color" default="#ad9" value="#aadd99">
+   <Variable name="bordercolor" description="Border Color"
+             type="color" default="#333" value="#333333">
+   <Variable name="sidebarcolor" description="Sidebar Title Color"
+             type="color" default="#777" value="#777777">
+   <Variable name="sidebartextcolor" description="Sidebar Text Color"
+             type="color" default="#999" value="#999999">
+   <Variable name="visitedlinkcolor" description="Visited Link Color"
+             type="color" default="#a7a" value="#aa77aa">
+   <Variable name="bodyfont" description="Text Font"
+             type="font" default="normal normal 100% Arial" value="normal normal 100% Arial">
+   <Variable name="headerfont" description="Sidebar Title Font"
+             type="font"
+             default="normal bold 100% Arial" value="normal bold 100% Arial">
+   <Variable name="pagetitlefont" description="Blog Title Font"
+             type="font"
+             default="normal bold 200% Arial" value="normal bold 200% Arial">
+   <Variable name="descriptionfont" description="Blog Description Font"
+             type="font"
+             default="normal normal 100% Arial" value="normal normal 100% Arial">
+   <Variable name="postfooterfont" description="Post Footer Font"
+             type="font"
+             default="normal normal 100% Arial" value="normal normal 100% Arial">
+*/
+
+/* Use this with templates/template-twocol.html */
+
+#TextList1{
+  visibility: hidden;
+  position: fixed;
+  left: -2000px;
+}
+#Image1{
+  visibility: hidden;
+  position: fixed;
+  left: -2000px;
+}
+#Image2{
+  visibility: hidden;
+  position: fixed;
+  left: -2000px;
+}
+pre{
+  font: 'courier new', monaco;
+  font-size: 1em;
+  overflow: scroll;
+}
+.post-body{
+  letter-spacing: 0.1em;
+  line-height: 150%
+}
+
+blockquote{
+  background-color: #111;
+  padding: 10pt;
+  margin: 0pt 3pt 3pt 0pt;
+}
+blockquote blockquote{
+  background-color: #222;
+}
+body{
+  background: $bgcolor;
+  margin:0;
+  color: $textcolor;
+  text-align: center;
+}
+a:link{
+  color: $linkcolor;
+  text-decoration: none;
+}
+a:visited{
+  color: $visitedlinkcolor;
+  text-decoration:none;
+}
+a:hover{
+  color: $titlecolor;
+  text-decoration: underline;
+}
+a img{
+  border-width:0;
+}
+
+/* Header
+-----------------------------------------------
+ */
+
+#header-wrapper {
+  /* width: 880px; */
+  margin: 0 auto 10px;
+  border: 1px solid $bordercolor;
+}
+
+#header {
+  margin: 5px;
+  border: 1px solid $bordercolor;
+  text-align: center;
+  color: $pagetitlecolor;
+}
+
+#header h1 {
+  margin: 5px 5px 0;
+  padding: 15px 20px .25em;
+  line-height: 1.2em;
+  letter-spacing: .2em;
+  font: $pagetitlefont;
+}
+
+#header a {
+  color: $pagetitlecolor;
+  text-decoration: none;
+}
+
+#header a:hover {
+  color: $pagetitlecolor;
+}
+
+#header .description {
+  margin: 0 5px 5px;
+  padding: 0 20px 15px;
+  max-width: 700px;
+  letter-spacing: .2em;
+  line-height: 1.4em;
+  font: $descriptionfont;
+  color: $descriptioncolor;
+}
+
+
+/* Outer-Wrapper
+----------------------------------------------- */
+#outer-wrapper {
+  /* width: 1024px; */
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  font: $bodyfont;
+}
+
+#main-wrapper {
+  /* width: 800px; */
+  float: left;
+  position: absolute;
+  top: 20px;
+  left: 22%;
+  max-width: 75%;
+  margin: 10px;
+  word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+  overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+
+.sidebar-wrapper {
+  width: 20%;
+  float: left;
+  word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+  overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+
+
+/* Headings
+----------------------------------------------- */
+
+h2 {
+  margin: 1.5em 0 .75em;
+  font: $headerfont;
+  line-height: 1.4em;
+  letter-spacing: .2em;
+  color: $sidebarcolor;
+}
+
+
+/* Posts
+-----------------------------------------------
+ */
+h2.date-header{
+  margin: 1.5em 0 .5em;
+}
+
+.post{
+  margin: .5em 0 1.5em;
+  border-bottom: 1px dotted $bordercolor;
+  padding-bottom: 1.5em;
+}
+
+.post h3{
+  margin: .25em 0 0;
+  padding: 0 0 4px;
+  font-size: 140%;
+  font-weight: normal;
+  line-height: 1.4em;
+  color: $titlecolor;
+}
+
+.post h3 a, .post h3 a:visited, .post h3 strong {
+  /* display: block; */
+  text-decoration: none;
+  color: $titlecolor;
+  font-weight: bold;
+}
+
+.post h3 strong, .post h3 a:hover {
+  color: $textcolor;
+}
+
+.post-footer {
+  margin: .75em 0;
+  color: $sidebarcolor;
+  letter-spacing: .1em;
+  font: $postfooterfont;
+  line-height: 1.4em;
+}
+
+.comment-link{
+  margin-left: .6em;
+}
+.post img{
+  padding: 4px;
+  border: 1px solid $bordercolor;
+}
+
+/* Comments
+----------------------------------------------- */
+#comments h4{
+  margin:1em 0;
+  font-weight: bold;
+  line-height: 1.4em;
+  letter-spacing:.2em;
+  color: $sidebarcolor;
+}
+
+#comments-block {
+  margin: 1em 0 1.5em;
+  line-height: 1.6em;
+}
+#comments-block .comment-author {
+  margin: .5em 0;
+}
+#comments-block .comment-body {
+  margin: .25em 0 0;
+}
+#comments-block .comment-footer {
+  margin: -.25em 0 2em;
+  line-height: 1.4em;
+  letter-spacing: .1em;
+}
+#comments-block .comment-body p {
+  margin:0 0 .75em;
+}
+.deleted-comment {
+  font-style:italic;
+  color:gray;
+}
+
+.feed-links {
+  clear: both;
+  line-height: 2.5em;
+}
+
+#blog-pager-newer-link {
+  float: left;
+}
+
+#blog-pager-older-link {
+  float: right;
+}
+
+#blog-pager {
+  text-align: center;
+}
+
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar {
+  color: $sidebartextcolor;
+  line-height: 1.5em;
+}
+
+.sidebar ul {
+  list-style:none;
+  margin:0 0 0;
+  padding:0 0 0;
+}
+.sidebar li {
+  margin:0;
+  padding:0 0 .25em 15px;
+  text-indent:-15px;
+  line-height:1.5em;
+}
+
+.sidebar .widget, .main .widget {
+  border-bottom:1px dotted $bordercolor;
+  margin:0 0 1.5em;
+  padding:0 0 1.5em;
+}
+
+.main .Blog {
+  border-bottom-width: 0;
+}
+
+/* Profile
+----------------------------------------------- */
+.profile-img {
+  float: left;
+  margin: 0 5px 5px 0;
+  padding: 4px;
+  border: 1px solid $bordercolor;
+}
+
+.profile-data {
+  margin:0;
+  letter-spacing:.1em;
+  font: $postfooterfont;
+  color: $sidebarcolor;
+  font-weight: bold;
+  line-height: 1.6em;
+}
+
+.profile-datablock {
+  margin:.5em 0 .5em;
+}
+
+.profile-textblock {
+  margin: 0.5em 0;
+  line-height: 1.6em;
+}
+
+.profile-link {
+  font: $postfooterfont;
+  letter-spacing: .1em;
+}
+
+/* Footer
+----------------------------------------------- */
+#footer {
+  /* width:880px; */
+  clear: both;
+  bottom: 10pt;
+  margin: 0 auto;
+  padding-top: 15px;
+  line-height: 1.6em;
+  letter-spacing: .1em;
+  text-align: center;
+}
+
+/** Page structure tweaks for layout editor wireframe */
+body#layout #header {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+]]></b:skin>
+  </head>
+
+  <body>
+    <div id='outer-wrapper'><div id='wrap2'>
+
+    <!-- skip links for text browsers -->
+    <span id='skiplinks' style='display:none;'>
+      <a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+    </span>
+
+    <div id='content-wrapper'>
+
+      <div class='sidebar-wrapper'>
+        <b:section class='sidebar' id='sidebar' preferred='yes'>
+          <b:widget id='HTML2' locked='false' title='' type='HTML'/>
+          <b:widget id='Text1' locked='false' title='' type='Text'/>
+          <b:widget id='HTML3' locked='false' title='禁止餵食' type='HTML'/>
+          <b:widget id='Profile1' locked='false' title='' type='Profile'/>
+          <b:widget id='BlogArchive1' locked='false' title='日期分類' type='BlogArchive'/>
+          <b:widget id='Label1' locked='false' title='標籤分類' type='Label'/>
+          <b:widget id='LinkList1' locked='false' title='蟲洞 worm-hole' type='LinkList'/>
+        </b:section>
+      </div>
+
+      <div id='main-wrapper'>
+        <b:section class='main' id='main' showaddelement='no'>
+          <b:widget id='Header1' locked='false' title='星之一角 2.3.3 (標頭)' type='Header'/>
+          <b:widget id='Blog1' locked='true' title='網誌文章' type='Blog'/>
+          <b:widget id='Image1' locked='false' title='' type='Image'/>
+          <b:widget id='Image2' locked='false' title='' type='Image'/>
+          <b:widget id='TextList1' locked='false' title='favorite albums' type='TextList'/>
+          <b:widget id='HTML1' locked='false' title='' type='HTML'/>
+        </b:section>
+      </div>
+
+      <!-- spacer for skins that want sidebar and main to be the same height-->
+      <div class='clear'>&#160;</div>
+
+    </div> <!-- end content-wrapper -->
+
+    <div id='footer-wrapper'>
+      <b:section class='footer' id='footer'>
+      </b:section>
+    </div>
+
+  </div></div> <!-- end outer-wrapper -->
+
+  <!-- google analytics -->
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-1533726-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>
