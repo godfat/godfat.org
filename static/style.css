@@ -1,39 +1,49 @@
 body{
   margin: 5% 10% 0% 10%;
+  font-family: Helvetica, Arial;
+}
+h1{
+  font-size: 1em;
 }
 div{
-  margin: 15pt;
-}
-li{
-  margin: 2.5pt;
-  padding-top: 5pt;
-}
-br{
-  margin: 2.5pt;
-}
-blockquote{
-  font-style: oblique;
-  line-height: 20pt;
-  padding-left: 20pt;
-}
-img{
-  border: 0pt;
+  margin: 1em;
 }
 .block{
-  margin-bottom: 50pt;
+  margin-bottom: 4em;
 }
 .block li{
-  padding-top: 10pt;
+  margin-bottom: 1em;
 }
 #header{
   font-weight: bold;
 }
 #news p{
   background-color: #bbb;
-  padding: 5pt;
+  padding: 1em;
 }
 #sig{
   text-align: right;
+}
+blockquote{
+  font-style: oblique;
+  line-height: 1.2em;
+  margin-left: 2.4em;
+}
+li{
+  margin: 0.15em;
+  padding-top: 0.3em;
+}
+hr{
+  margin: 0em 0 2em 0;
+}
+br{
+  margin: 0.15em;
+}
+img{
+  border: 0;
+}
+pre{
+  font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New";
 }
 
 /* twilight from ultraviolet */
