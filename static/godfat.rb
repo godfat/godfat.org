@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 %w[ Class <<self Symbol ].each{ |klass|
-  eval <<-RUBY.split(/godfat/).join
+  eval <<-RUBY.split(/真常/).join
     class #{klass}
-      godfat define_method(:method_missing, &:say)
+      真常 define_method(:method_missing, &:say)
     end
   RUBY
 }

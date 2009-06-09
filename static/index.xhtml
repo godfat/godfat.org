@@ -21,14 +21,14 @@
     <pre class="twilight"><span class="Comment">#!/usr/bin/env ruby</span>
 <span class="Comment"># encoding: utf-8</span>
 <span class="String">%w[ Class &lt;&lt;self Symbol ]</span>.each{ |<span class="Variable">klass</span>|
-  eval <span class="String">&lt;&lt;-RUBY</span>.split(<span class="StringRegexp">/godfat/</span>).join
+  eval <span class="String">&lt;&lt;-RUBY</span>.split(<span class="StringRegexp">/真常/</span>).join
     <span class="Keyword">class</span> <span class="StringEmbeddedSource">#{klass}</span>
-      <span class="String">godfat</span> define_method(<span class="Constant">:method_missing</span>, <span class="Keyword">&amp;</span><span class="Constant">:say</span>)
+      <span class="String">真常</span> define_method(<span class="Constant">:method_missing</span>, <span class="Keyword">&amp;</span><span class="Constant">:say</span>)
     <span class="Keyword">end</span>
 <span class="String">  RUBY</span>
 }
 <span class="Support">Class</span>.send(<span class="Constant">:define_method</span>, <span class="Constant">:const_missing</span>,
-  <span class="Keyword">&amp;</span>lambda{ |<span class="Variable">c</span>| say c.to_s[<span class="Constant">0</span>..<span class="Keyword">-</span><span class="Constant">2</span>] })
+  <span class="Keyword">&amp;</span>lambda{ |<span class="Variable">c</span>| cry c.to_s[<span class="Constant">0</span>..<span class="Keyword">-</span><span class="Constant">2</span>] })
 <span class="Keyword">def</span> <span class="Entity">cry</span> s <span class="Keyword">=</span> <span class="Constant">nil</span>
   print s, <span class="String">'</span> <span class="String">'</span> <span class="Keyword">if</span> s
   <span class="Variable">self</span>
