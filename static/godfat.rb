@@ -14,7 +14,7 @@ def say s = nil
   self
 end
 public :say
-say Hello.World!
+sing Hello.World!
 puts
 __END__
 Apache License 2.0
