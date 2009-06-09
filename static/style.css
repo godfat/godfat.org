@@ -44,6 +44,7 @@ img{
 }
 pre{
   font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New";
+  padding: 1em 0 1em 4em;
 }
 
 /* twilight from ultraviolet */
