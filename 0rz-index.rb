@@ -9,7 +9,7 @@ number, last = $1.to_i, current.next['href']
 
 atom = Nokogiri::XML.parse(open('http://blogger.godfat.org/feeds/posts/default').read)
 result = []
-atom.css('entry').each(){ |entry|
+atom.css('entry').each{ |entry|
   href = entry.css('link').find{ |link|
                              link['rel']  == 'alternate' &&
                              link['type'] == 'text/html'
