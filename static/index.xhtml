@@ -20,7 +20,18 @@
 
     <pre class="twilight"><span class="Comment">#!/usr/bin/env ruby</span>
 <span class="Comment"># encoding: utf-8</span>
-<span class="String">%w[ Class &lt;&lt;self Symbol ]</span>.each{ |<span class="Variable">klass</span>|
+%w[ <span class="String">Class &lt;&lt;self Symbol</span> ].reverse.each{ |<span class="Variable">klass</span>|
+  <span class="Comment"># 1.8 compatibility</span>
+  <span class="Keyword">def</span> <span class="Entity">public_send</span> <span class="Keyword">*</span>args
+    <span class="Storage">respond_to?</span>(args.first) <span class="Keyword">&amp;&amp;</span> send(<span class="Keyword">*</span>args)
+  <span class="Keyword">end</span> <span class="Keyword">unless</span> <span class="Storage">respond_to?</span>(<span class="Constant">:public_send</span>)
+
+  <span class="Comment"># rubinius, jruby compatibility</span>
+  <span class="Keyword">def</span> <span class="Entity">to_proc</span>
+    msg <span class="Keyword">=</span> <span class="Variable">self</span>
+    lambda{ |<span class="Keyword">*</span><span class="Variable">args</span>| args.shift.public_send(msg, <span class="Keyword">*</span>args) }
+  <span class="Keyword">end</span>
+
   eval <span class="String">&lt;&lt;-RUBY</span>.split(<span class="StringRegexp">/真常/</span>).join
     <span class="Keyword">class</span> <span class="StringEmbeddedSource">#{klass}</span>
       <span class="String">真常</span> define_method(<span class="Constant">:method_missing</span>, <span class="Keyword">&amp;</span><span class="Constant">:say</span>)
