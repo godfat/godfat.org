@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="favicon.png"/>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
     <title>飽和脂肪星</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -21,17 +22,28 @@
     <pre class="twilight"><span class="Comment">#!/usr/bin/env ruby</span>
 <span class="Comment"># encoding: utf-8</span>
 %w[ <span class="String">Class &lt;&lt;self Symbol</span> ].reverse.each{ |<span class="Variable">klass</span>|
-  <span class="Comment"># 1.8 compatibility</span>
-  <span class="Keyword">def</span> <span class="Entity">public_send</span> <span class="Keyword">*</span>args
+  <span class="Comment toggler" id="d18-toggle"># dirty 1.8 compatibility</span>
+  <span id="d18"><span class="Keyword">def</span> <span class="Entity">public_send</span> <span class="Keyword">*</span>args
     <span class="Storage">respond_to?</span>(args.first) <span class="Keyword">&amp;&amp;</span> send(<span class="Keyword">*</span>args)
-  <span class="Keyword">end</span> <span class="Keyword">unless</span> <span class="Storage">respond_to?</span>(<span class="Constant">:public_send</span>)
-
-  <span class="Comment"># rubinius, jruby compatibility</span>
-  <span class="Keyword">def</span> <span class="Entity">to_proc</span>
+  <span class="Keyword">end</span> <span class="Keyword">unless</span> <span class="Storage">respond_to?</span>(<span class="Constant">:public_send</span>)</span>
+  <span class="Comment toggler" id="f18-toggle"># full 1.8 compatibility</span>
+  <span id="f18"><span class="Keyword">def</span> <span class="Entity">public_send</span> <span class="Keyword">*</span>args
+    <span class="Keyword">if</span> <span class="Storage">respond_to?</span>(args.first)
+      send(<span class="Keyword">*</span>args)
+    <span class="Keyword">else</span>
+      msg <span class="Keyword">=</span> <span class="String">" `</span><span class="StringEmbeddedSource">\#</span><span class="String">{</span><span class="StringVariable">args.first</span><span class="String">}' called for </span><span class="StringEmbeddedSource">\#</span><span class="String">{</span><span class="StringVariable">inspect</span><span class="String">}:</span><span class="StringEmbeddedSource">\#</span><span class="String">{</span><span class="StringVariable">self.class</span><span class="String">}"</span>
+      <span class="Keyword">if</span> <span class="Storage">respond_to?</span>(args.first, true)
+        <span class="Keyword">raise</span> <span class="Support">NoMethodError</span>.<span class="Keyword">new</span>(  <span class="String">'private method'</span> <span class="Keyword">+</span> msg)
+      <span class="Keyword">else</span>
+        <span class="Keyword">raise</span> <span class="Support">NoMethodError</span>.<span class="Keyword">new</span>(<span class="String">'undefined method'</span> <span class="Keyword">+</span> msg)
+      <span class="Keyword">end</span>
+    end
+  <span class="Keyword">end if</span> <span class="Variable">RUBY_VERSION</span> <span class="Keyword">&lt;</span> <span class="String">'1.9.0'</span></span>
+  <span class="Comment toggler" id="rbx-jruby-toggle"># rubinius, jruby compatibility</span>
+  <span id="rbx-jruby"><span class="Keyword">def</span> <span class="Entity">to_proc</span>
     msg <span class="Keyword">=</span> <span class="Variable">self</span>
     lambda{ |<span class="Keyword">*</span><span class="Variable">args</span>| args.shift.public_send(msg, <span class="Keyword">*</span>args) }
-  <span class="Keyword">end</span>
-
+  <span class="Keyword">end</span></span>
   eval <span class="String">&lt;&lt;-RUBY</span>.split(<span class="StringRegexp">/真常/</span>).join
     <span class="Keyword">class</span> <span class="StringEmbeddedSource">#{klass}</span>
       <span class="String">真常</span> define_method(<span class="Constant">:method_missing</span>, <span class="Keyword">&amp;</span><span class="Constant">:say</span>)
@@ -215,6 +227,13 @@ Apache License 2.0
              src="images/vcss-blue.gif"
              alt="Valid CSS!"/></a>
     </div>
+
+    <script type="text/javascript">
+      jQuery.each(['#d18', '#f18', '#rbx-jruby'], function(i, v){
+        $(v).hide();
+        $(v + '-toggle').click( function(){ $(v).toggle(); } );
+      });
+    </script>
 
     <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
