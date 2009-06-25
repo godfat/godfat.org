@@ -2,8 +2,11 @@ body{
   margin: 5% 10% 0% 10%;
   font-family: Helvetica, Arial;
 }
-h1{
+h1, h2{
   font-size: 1em;
+}
+h2{
+  font-style: oblique;
 }
 div{
   margin: 1em;
