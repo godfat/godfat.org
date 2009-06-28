@@ -124,7 +124,6 @@ a img{
  */
 
 #header-wrapper {
-  /* width: 880px; */
   margin: 0 auto 10px;
   border: 1px solid $bordercolor;
 }
@@ -156,7 +155,6 @@ a img{
 #header .description {
   margin: 0 5px 5px;
   padding: 0 20px 15px;
-  max-width: 700px;
   letter-spacing: .2em;
   line-height: 1.4em;
   font: $descriptionfont;
@@ -167,7 +165,6 @@ a img{
 /* Outer-Wrapper
 ----------------------------------------------- */
 #outer-wrapper {
-  /* width: 1024px; */
   margin: 0 auto;
   padding: 10px;
   text-align: left;
@@ -175,12 +172,10 @@ a img{
 }
 
 #main-wrapper {
-  /* width: 800px; */
   float: left;
   position: absolute;
   top: 20px;
   left: 22%;
-  max-width: 75%;
   margin: 10px;
   word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
   overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
@@ -304,6 +299,9 @@ h2.date-header{
 #blog-pager {
   text-align: center;
 }
+#comment-editor{
+  width: 500px;
+}
 
 /* Sidebar Content
 ----------------------------------------------- */
@@ -369,7 +367,6 @@ h2.date-header{
 /* Footer
 ----------------------------------------------- */
 #footer {
-  /* width:880px; */
   clear: both;
   bottom: 10pt;
   margin: 0 auto;
