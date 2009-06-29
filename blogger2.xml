@@ -78,12 +78,6 @@ refer: http://blogger.godfat.org/
   position: fixed;
   left: -2000px;
 }
-pre{
-  font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New";
-  padding: 1em 0 1em 0em;
-  font-size: 1em;
-  overflow: auto;
-}
 .post-body{
   letter-spacing: 0.1em;
   line-height: 150%
@@ -380,6 +374,14 @@ h2.date-header{
 body#layout #header {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+pre{
+  font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New";
+  padding: 1em 0 1em 0em;
+  font-size: 1em;
+  overflow: auto;
+  max-width: 850px;
 }
 
 /* twilight from ultraviolet */
