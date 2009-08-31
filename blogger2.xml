@@ -45,20 +45,6 @@ refer: http://blogger.godfat.org/
              type="color" default="#999" value="#999999">
    <Variable name="visitedlinkcolor" description="Visited Link Color"
              type="color" default="#a7a" value="#aa77aa">
-   <Variable name="bodyfont" description="Text Font"
-             type="font" default="normal normal 100% Arial" value="normal normal 100% Arial">
-   <Variable name="headerfont" description="Sidebar Title Font"
-             type="font"
-             default="normal bold 100% Arial" value="normal bold 100% Arial">
-   <Variable name="pagetitlefont" description="Blog Title Font"
-             type="font"
-             default="normal bold 200% Arial" value="normal bold 200% Arial">
-   <Variable name="descriptionfont" description="Blog Description Font"
-             type="font"
-             default="normal normal 100% Arial" value="normal normal 100% Arial">
-   <Variable name="postfooterfont" description="Post Footer Font"
-             type="font"
-             default="normal normal 100% Arial" value="normal normal 100% Arial">
 */
 
 /* Use this with templates/template-twocol.html */
@@ -96,6 +82,7 @@ body{
   margin:0;
   color: $textcolor;
   text-align: center;
+  font-family: Helvetica, Arial, "儷黑 Pro", "LiHei Pro";
 }
 a:link{
   color: $linkcolor;
@@ -134,7 +121,6 @@ a img{
   padding: 15px 20px .25em;
   line-height: 1.2em;
   letter-spacing: .2em;
-  font: $pagetitlefont;
 }
 
 #header a {
@@ -151,7 +137,6 @@ a img{
   padding: 0 20px 15px;
   letter-spacing: .2em;
   line-height: 1.4em;
-  font: $descriptionfont;
   color: $descriptioncolor;
 }
 
@@ -162,7 +147,6 @@ a img{
   margin: 0 auto;
   padding: 10px;
   text-align: left;
-  font: $bodyfont;
 }
 
 #main-wrapper {
@@ -188,7 +172,6 @@ a img{
 
 h2 {
   margin: 1.5em 0 .75em;
-  font: $headerfont;
   line-height: 1.4em;
   letter-spacing: .2em;
   color: $sidebarcolor;
@@ -232,7 +215,6 @@ h2.date-header{
   margin: .75em 0;
   color: $sidebarcolor;
   letter-spacing: .1em;
-  font: $postfooterfont;
   line-height: 1.4em;
 }
 
@@ -338,7 +320,6 @@ h2.date-header{
 .profile-data {
   margin:0;
   letter-spacing:.1em;
-  font: $postfooterfont;
   color: $sidebarcolor;
   font-weight: bold;
   line-height: 1.6em;
@@ -354,7 +335,6 @@ h2.date-header{
 }
 
 .profile-link {
-  font: $postfooterfont;
   letter-spacing: .1em;
 }
 
