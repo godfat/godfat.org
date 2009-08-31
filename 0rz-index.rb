@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby1.9
 
 require 'nokogiri'
 require 'open-uri'
