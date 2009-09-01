@@ -82,7 +82,7 @@ body{
   margin:0;
   color: $textcolor;
   text-align: center;
-  font-family: Helvetica, Arial, "儷黑 Pro", "LiHei Pro";
+  font-family: "Bitstream Vera Sans", Arial, "儷黑 Pro", "LiHei Pro";
 }
 a:link{
   color: $linkcolor;
