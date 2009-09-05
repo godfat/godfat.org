@@ -65,7 +65,8 @@ Apache License 2.0
 
     <h1>news:</h1>
     <div id="news">
-      <p>
+      <span class="toggler" id="news-2009-09-05-toggle">2009-09-05</span>
+      <p id="news-2009-09-05">
         2009-09-05<br/>
         Yet another migration. I've moved this page from godfat.github.com to<br/>
         google appengine on 2009-09-02, because github didn't update my page<br/>
@@ -91,20 +92,23 @@ Apache License 2.0
         <a href="http://github.com/godfat/godfat.org">原始檔</a>也搬回 godfat.org 了。
       </p>
 
-      <p>
+      <span class="toggler" id="news-2009-06-09-toggle">2009-06-09</span>
+      <p id="news-2009-06-09">
         2009-06-09<br/>
         I've stopped server on slicehost a while ago, so redirect godfat.org to<br/>
         godfat.github.com for now. Since I got to reduce some extra cost...
       </p>
 
-      <p>
+      <span class="toggler" id="news-2008-12-17-toggle">2008-12-17</span>
+      <p id="news-2008-12-17">
         2008-12-17<br/>
         host this site at <a href="http://godfat.github.com/">github</a> as well.<br/>
         source code moved from <a href="http://github.com/godfat/godfat.org">godfat.org</a>
         to <a href="http://github.com/godfat/godfat.github.com">godfat.github.com</a> for convenience.
       </p>
 
-      <p>
+      <span class="toggler" id="news-2008-12-12-toggle">2008-12-12</span>
+      <p id="news-2008-12-12">
         2008-12-12<br/>
         website renewal, this page was put to github.
         <a href="http://github.com/godfat/godfat.org">soruce code</a><br/>
@@ -112,9 +116,10 @@ Apache License 2.0
         <a href="http://github.com/godfat">github</a>.
       </p>
 
-      <p>
-       2007.08.23<br/>
-       [公告] <del>godfat.idv.tw</del> 將慢慢捨棄，也不建議使用 <del>godfat.tw</del>,<br/>
+      <span class="toggler" id="news-2007-08-23-toggle">2007-08-23</span>
+      <p id="news-2007-08-23">
+        2007.08.23<br/>
+        [公告] <del>godfat.idv.tw</del> 將慢慢捨棄，也不建議使用 <del>godfat.tw</del>,<br/>
         可設定的東西也不夠多，以後將完全使用 <strong><em>godfat.org</em></strong>
       </p>
     </div>
@@ -268,7 +273,11 @@ Apache License 2.0
     </div>
 
     <script type="text/javascript">
-      jQuery.each(['#d18', '#f18', '#rbx-jruby'], function(i, v){
+      jQuery.each(['#d18', '#f18', '#rbx-jruby',
+                   '#news-2007-08-23', '#news-2008-12-12',
+                   '#news-2008-12-17', '#news-2009-06-09',
+                   '#news-2009-09-05'],
+      function(i, v){
         $(v).hide();
         $(v + '-toggle').click( function(){ $(v).toggle(); } );
       });
