@@ -3,7 +3,27 @@ the intro of computer programming
 淺談電腦程式
 2009-09-15 till 2009-09-20
 
-零 序
+*****
+
+零、序
+  0. 目的
+  1. 讀者
+
+壹、何謂程式
+  0. 操作資料的方法
+  1. 儲存資料的方法
+  2. 輸入與輸出
+  3. 沒有明確定義
+
+貳、計算模型
+
+終、附錄
+  0. 中英對照
+
+*****
+
+2009-09-15
+零、序
 0. 目的
 
 呃，撰寫本文大致上有三個目的。一、雖然我並不是很明白「科學」的確切定義，
@@ -44,9 +64,10 @@ the intro of computer programming
 激起一些想法，理解一些電腦科學的理論，而不是認為寫程式這行只不過是勞力
 密集的挖礦業罷了。三、等我想到了再告訴你。
 
-*
+*****
 
-壹 何謂程式
+2009-09-20
+壹、何謂程式
 0. 操作資料的方法
 
 廣義而言，程式就是可以被執行，一連串操作資料的方法。假設現在有一個圖書館，
@@ -70,7 +91,7 @@ the intro of computer programming
 加起來就等於是一個排序的程式。到這裡，我們看到了除了操作資料的方法外，
 還有儲存資料的方法。
 
-3. 輸入與輸出
+2. 輸入與輸出
 
 也就是說，程式並不是一個具體的東西，他可以看成是一種執行方法的抽象概念。
 圖書館本身並不是程式，但是排序圖書館這件事則是一個程式。執行前的狀態則
@@ -82,7 +103,7 @@ the intro of computer programming
 捨棄掉了。也就是說，原本書本排序不正確的圖書館，被捨棄掉了，由輸出結果，
 也就是書本排序好的圖書館取而代之。
 
-4. 
+3. 沒有明確定義
 
 記得數學上的函數？我們也可以說這個程式其實是一種函數，給定一組輸入，
 函數會給定另一組輸出。程式與函數之間有很大的關係，但不是完全一對一對應。
@@ -103,20 +124,26 @@ the intro of computer programming
 
 <a href="http://en.wikipedia.org/wiki/Algorithms_%2B_Data_Structures_%3D_Programs">Algorithms + Data Structures = Programs</a>
 
-貳
+*****
 
+貳、計算模型
 
-*
+*****
 
-附錄
-中英對照
+終、附錄
+0. 中英對照
 
-algorithm: 演算法
-computer program: 電腦程式
-computer programming: 電腦程式設計
-data: 資料
-data structure: 資料結構
-function: 函數
-sorting: 排序
+algorithm: <a href="http://en.wikipedia.org/wiki/Algorithm">演算法</a>
+computation: <a href="http://en.wikipedia.org/wiki/Computation">計算</a>
+computer program: <a href="http://en.wikipedia.org/wiki/Computer_program">電腦程式</a>
+computer programming: <a href="http://en.wikipedia.org/wiki/Computer_programming">電腦程式設計</a>
+computer science: <a href="http://en.wikipedia.org/wiki/Computer_science">電腦科學</a>
+data: <a href="http://en.wikipedia.org/wiki/Data_(computing)">資料</a>
+data structure: <a href="http://en.wikipedia.org/wiki/Data_structure">資料結構</a>
+function: <a href="http://en.wikipedia.org/wiki/Function_(mathematics)">函數</a>
+model of computation: <a href="http://en.wikipedia.org/wiki/Model_of_computation">計算模型</a>
+scientific modelling: <a href="http://en.wikipedia.org/wiki/Scientific_modelling">科學建模</a>
+sorting: <a href="http://en.wikipedia.org/wiki/Sorting">排序</a>
+subroutine: <a href="http://en.wikipedia.org/wiki/Subroutine">副程序</a>
 program: 同 computer program
 programming: 同 computer programming
