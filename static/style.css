@@ -11,11 +11,31 @@ h1, h2{
 h2{
   font-style: oblique;
 }
+hr{
+  margin: 0 0 2em 0;
+  clear: both;
+}
+blockquote{
+  font-style: oblique;
+  line-height: 1.2em;
+  margin-left: 2.4em;
+}
 div{
   margin: 1em;
 }
-.block li{
-  margin-bottom: 1em;
+br{
+  margin: 0.15em;
+}
+pre{
+  font-family: "Bitstream Vera Sans Mono", "Monaco", "Courier New";
+  padding: 1em 0 1em 4em;
+}
+li{
+  margin: 0.15em;
+  padding-top: 0.3em;
+}
+img{
+  border: 0;
 }
 #header{
   font-weight: bold;
@@ -27,40 +47,20 @@ div{
 #sig{
   text-align: right;
 }
-blockquote{
-  font-style: oblique;
-  line-height: 1.2em;
-  margin-left: 2.4em;
+#menu{
+  padding-bottom: 2em;
+}
+#menu .toggler{
+  list-style-type: square;
+  float: left;
+  width: 8em;
 }
 .toggler{
   cursor: pointer;
   text-decoration: underline;
 }
-.menu{
-  padding-bottom: 2em;
-}
-.menu .toggler{
-  list-style-type: square;
-  float: left;
-  width: 8em;
-}
-li{
-  margin: 0.15em;
-  padding-top: 0.3em;
-}
-br{
-  margin: 0.15em;
-}
-img{
-  border: 0;
-}
-pre{
-  font-family: "Bitstream Vera Sans Mono", "Monaco", "Courier New";
-  padding: 1em 0 1em 4em;
-}
-hr{
-  margin: 0 0 2em 0;
-  clear: both;
+.block li{
+  margin-bottom: 1em;
 }
 
 /* twilight from ultraviolet */
