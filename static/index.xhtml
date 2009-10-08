@@ -67,7 +67,10 @@ Apache License 2.0
       <span class="togger" id="news-2009-10-08-toggle">2009-10-08</span>
       <p id="news-2009-10-08">
         2009-10-08<br/>
-        added a frame and a time-graph about me.
+        <ul>
+          <li>added a frame and a time-graph about me.</li>
+          <li>defaults to hide everything</li>
+        </ul>
       </p>
 
       <span class="toggler" id="news-2009-09-05-toggle">2009-09-05</span>
@@ -131,8 +134,8 @@ Apache License 2.0
 
     <hr/>
 
-    <h1>websites:</h1>
-    <div class="block">
+    <h1 class="toggler" id="websites-toggle">websites:</h1>
+    <div class="block" id="websites">
       <ul>
         <li>
           <a href="http://godfat.org/">飽和脂肪星</a>
@@ -162,8 +165,8 @@ Apache License 2.0
       </ul>
     </div>
 
-    <h1>projects:</h1>
-    <div class="block">
+    <h1 class="toggler" id="projects-toggle">projects:</h1>
+    <div class="block" id="projects">
       <h2>C++ 98</h2>
       <ul>
         <li>
@@ -232,46 +235,40 @@ Apache License 2.0
       </ul>
     </div>
 
-    <h1>slides:</h1>
-    <div class="block">
+    <h1 class="toggler" id="slides-toggle">slides:</h1>
+    <div class="block" id="slides">
       <ul>
-
         <li>2008-12-21 <a href="slide/2008-12-21-rubinius.pdf">Rubinius</a></li>
         <li>2008-01-25 <a href="slide/2008-01-25-tangible_value.pdf">Tangible Value</a></li>
         <li>2007-06-24 <a href="slide/2007-06-24-the_lost_piece.pdf">The Lost Piece</a></li>
-
       </ul>
     </div>
 
-    <h1>programming languages:</h1>
-    <div class="block">
+    <h1 class="toggler" id="programming-languages-toggle">programming languages:</h1>
+    <div class="block" id="programming-languages">
       <ul>
-
         <li>Ruby 1.8/1.9</li>
         <li>ISO C++ 98/03</li>
         <li>ActionScript 2.0/3.0</li>
         <li>Haskell 98 (studying)</li>
         <li>Scala 2.8 (studying)</li>
-
       </ul>
     </div>
 
-    <h1>others:</h1>
-    <div class="block">
+    <h1 class="toggler" id="misc-toggle">misc:</h1>
+    <div class="block" id="misc">
       <ul>
-
         <li>Arch Linux</li>
         <li>fish shell</li>
         <li>Git</li>
         <li>nginx HTTP server</li>
         <li>Bitstream Vera Sans (Mono)</li>
         <li>Apache License</li>
-
       </ul>
     </div>
 
-    <h1>time-graphs:</h1>
-    <div class="block">
+    <h1 class="toggler" id="time-graphs-toggle">time-graphs:</h1>
+    <div class="block" id="time-graphs">
       <ul>
         <li>2007-07 ~ present: roodo.com 樂多</li>
         <li>2007-03 ~ 2009-02: iis.sinica 中研院資科所</li>
@@ -309,7 +306,9 @@ Apache License 2.0
       jQuery.each(['#d18', '#f18', '#rbx-jruby',
                    '#news-2007-08-23', '#news-2008-12-12',
                    '#news-2008-12-17', '#news-2009-06-09',
-                   '#news-2009-09-05'],
+                   '#news-2009-09-05',
+                   '#websites', '#projects', '#slides',
+                   '#programming-languages', '#misc', '#time-graphs'],
       function(i, v){
         $(v).hide();
         $(v + '-toggle').click( function(){ $(v).toggle(); } );
