@@ -5,7 +5,7 @@ var news  = ['#news-2007-08-23', '#news-2008-12-12',
              '#news-2009-09-05']
 
 var items = ['#links', '#projects', '#slides',
-             '#programming-languages', '#misc',
+             '#programming-languages', '#favors',
              '#time-graphs']
 
 jQuery.each(
