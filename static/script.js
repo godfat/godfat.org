@@ -5,8 +5,10 @@ var news  = ['#news-2007-08-23', '#news-2008-12-12',
              '#news-2009-09-05', '#news-2009-10-08']
 
 var items = ['#links', '#projects', '#slides',
-             '#programming-languages', '#favors',
-             '#time-graphs']
+             '#programming-languages', '#time-graphs',
+             '#favors', '#games', '#comic',
+             '#composers', '#singers', '#albums',
+             '#books', '#misc', '#headphone']
 
 jQuery.each(
   code.concat(news).concat(items),
