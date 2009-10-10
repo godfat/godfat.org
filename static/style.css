@@ -5,15 +5,14 @@ body{
   font-family: "Bitstream Vera Sans", "Arial", "儷黑 Pro", "LiHei Pro";
 }
 h1, h2{
+  display: block;
   font-size: 1em;
-  clear: both;
 }
 h2{
   font-style: oblique;
 }
 hr{
   margin: 0 0 2em 0;
-  clear: both;
 }
 blockquote{
   font-style: oblique;
