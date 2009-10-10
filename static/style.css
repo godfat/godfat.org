@@ -45,6 +45,7 @@ img{
 }
 #sig{
   text-align: right;
+  margin: 0 0 0 auto;
 }
 #menu{
   padding-bottom: 2em;
