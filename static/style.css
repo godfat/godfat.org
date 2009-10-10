@@ -40,7 +40,7 @@ img{
 #header{
   font-weight: bold;
 }
-#news p{
+#news div{
   background-color: #bbb;
   padding: 1em;
 }
