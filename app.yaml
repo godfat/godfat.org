@@ -4,6 +4,9 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /slides/.*
+  script: slide.py
+
 - url: /
   static_files: static/index.xhtml
   upload: static/index.xhtml
