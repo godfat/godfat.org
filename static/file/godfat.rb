@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
+
+# Ruby Quiz #158
+
 %w[ Class <<self Symbol ].reverse.each{ |klass|
   eval <<-RUBY.split(/真常/).join
     class #{klass}

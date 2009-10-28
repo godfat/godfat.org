@@ -63,8 +63,11 @@ img{
   margin-bottom: 1em;
 }
 
-/* twilight from ultraviolet */
+pre.twilight a {
+  color: #CCCCCC;
+}
 
+/* twilight from ultraviolet */
 pre.twilight .DiffInserted {
    background-color: #253B22;
    color: #F8F8F8;
