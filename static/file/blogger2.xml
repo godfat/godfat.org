@@ -70,12 +70,12 @@ refer: http://blogger.godfat.org/
 }
 
 blockquote{
-  background-color: #111;
+  background-color: #222;
   padding: 0.7em;
   margin: 0;
 }
 blockquote blockquote{
-  background-color: #222;
+  background-color: #333;
 }
 body{
   background: $bgcolor;
