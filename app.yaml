@@ -1,4 +1,4 @@
-application: godfat2
+application: godfat
 version: 1
 runtime: python
 api_version: 1
