@@ -2,7 +2,7 @@ body{
   padding: 5% 10% 0% 10%;
   border-style: solid;
   border-width: thin;
-  font-family: "Bitstream Vera Sans", "Arial", "儷黑 Pro", "LiHei Pro";
+  font-family: "DejaVu Sans", "Bitstream Vera Sans", "Arial", "儷黑 Pro", "LiHei Pro";
 }
 h1, h2{
   display: block;
@@ -26,7 +26,7 @@ br{
   margin: 0.15em;
 }
 pre{
-  font-family: "Bitstream Vera Sans Mono", "Monaco", "Courier New";
+  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Courier New";
   padding: 1em 0 1em 4em;
 }
 li{
