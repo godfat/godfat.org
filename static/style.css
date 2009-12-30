@@ -26,7 +26,7 @@ br{
   margin: 0.15em;
 }
 pre{
-  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Consolas", "Courier New";
+  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Consolas", "Lucida Console", "Courier New";
   padding: 1em 0 1em 4em;
 }
 li{
