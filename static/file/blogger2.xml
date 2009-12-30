@@ -357,7 +357,7 @@ body#layout #header {
 }
 
 pre{
-  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Courier New";
+  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Consolas", "Courier New";
   padding: 1em 0 1em 0em;
   font-size: 1em;
   overflow: auto;
