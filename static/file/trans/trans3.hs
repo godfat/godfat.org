@@ -20,11 +20,10 @@ data Val = Num Int
 
 eval :: Expr -> ReaderT Env (Either String) Val
 eval (Lit literal)   = return (Num literal)
-eval (Var name)      = do
-                         mval <- asks (lookup name)
-                         case mval of
-                           Nothing  -> throwError ("Var " ++ name ++ " not found.")
-                           Just val -> return val
+eval (Var name)      = do mval <- asks (lookup name)
+                          case mval of
+                            Nothing  -> throwError ("Var " ++ name ++ " not found.")
+                            Just val -> return val
 
 eval (Add exp1 exp2) = do Num a <- eval exp1
                           Num b <- eval exp2
