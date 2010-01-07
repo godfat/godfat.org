@@ -82,7 +82,7 @@ body{
   margin:0;
   color: $textcolor;
   text-align: center;
-  font-family: "DejaVu Sans", "Bitstream Vera Sans", "Lucida Grande", "Arial", "儷黑 Pro", "LiHei Pro";
+  font-family: "DejaVu Sans", "Bitstream Vera Sans", "Lucida Grande", "Arial", "儷黑 Pro", "LiHei Pro", sans-serif;
 }
 a:link{
   color: $linkcolor;
@@ -357,7 +357,7 @@ body#layout #header {
 }
 
 pre{
-  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Consolas", "Lucida Console", "Courier New";
+  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Consolas", "Lucida Console", "Courier New", monospace;
   padding: 1em 0 1em 0em;
   font-size: 1em;
   overflow: auto;
