@@ -365,12 +365,12 @@ pre{
 }
 
 /* pygments highlighting */
-.pygments  { background: #000000; }
-.pygments .c { color: #5F5A60 } /* Comment */
-.pygments .k { color: #CDA869 } /* Keyword */
-.pygments .n { color: #FFFFFF } /* Name */
-.pygments .o { color: #CDA869 } /* Operator */
-.pygments .p { color: #CDA869 } /* Punctuation */
+.pygments     { background: #000000; }
+.pygments .c  { color: #5F5A60 } /* Comment */
+.pygments .k  { color: #CDA869 } /* Keyword */
+.pygments .n  { color: #FFFFFF } /* Name */
+.pygments .o  { color: #CDA869 } /* Operator */
+.pygments .p  { color: #CDA869 } /* Punctuation */
 .pygments .cm { color: #5F5A60 } /* Comment.Multiline */
 .pygments .cp { color: #5F5A60 } /* Comment.Preproc */
 .pygments .c1 { color: #5F5A60 } /* Comment.Single */
@@ -381,8 +381,8 @@ pre{
 .pygments .kp { color: #CDA869 } /* Keyword.Pseudo */
 .pygments .kr { color: #CDA869 } /* Keyword.Reserved */
 .pygments .kt { color: #9B859D } /* Keyword.Type */
-.pygments .m { color: #CF6A4C } /* Literal.Number */
-.pygments .s { color: #8F9D6A } /* Literal.String */
+.pygments .m  { color: #CF6A4C } /* Literal.Number */
+.pygments .s  { color: #8F9D6A } /* Literal.String */
 .pygments .na { color: #FFFFFF } /* Name.Attribute */
 .pygments .nb { color: #7587A6 } /* Name.Builtin */
 .pygments .nc { color: #9B859D } /* Name.Class */
@@ -398,7 +398,7 @@ pre{
 .pygments .nt { color: #FFFFFF } /* Name.Tag */
 .pygments .nv { color: #FFFFFF } /* Name.Variable */
 .pygments .ow { color: #CDA869 } /* Operator.Word */
-.pygments .w { color: #000000 } /* Text.Whitespace */
+.pygments .w  { color: #000000 } /* Text.Whitespace */
 .pygments .mf { color: #CF6A4C } /* Literal.Number.Float */
 .pygments .mh { color: #CF6A4C } /* Literal.Number.Hex */
 .pygments .mi { color: #CF6A4C } /* Literal.Number.Integer */
@@ -419,147 +419,6 @@ pre{
 .pygments .vg { color: #FFFFFF } /* Name.Variable.Global */
 .pygments .vi { color: #FFFFFF } /* Name.Variable.Instance */
 .pygments .il { color: #CF6A4C } /* Literal.Number.Integer.Long */
-
-/* twilight from ultraviolet */
-
-pre.twilight .DiffInserted {
-   background-color: #253B22;
-   color: #F8F8F8;
-}
-pre.twilight .DiffHeader {
-   background-color: #0E2231;
-   color: #F8F8F8;
-   font-style: italic;
-}
-pre.twilight .CssPropertyValue {
-   color: #F9EE98;
-}
-pre.twilight .CCCPreprocessorDirective {
-   color: #AFC4DB;
-}
-pre.twilight .Constant {
-   color: #CF6A4C;
-}
-pre.twilight .DiffChanged {
-   background-color: #4A410D;
-   color: #F8F8F8;
-}
-pre.twilight .EmbeddedSource {
-   background-color: #A3A6AD;
-}
-pre.twilight .Support {
-   color: #9B859D;
-}
-pre.twilight .MarkupList {
-   color: #F9EE98;
-}
-pre.twilight .CssConstructorArgument {
-   color: #8F9D6A;
-}
-pre.twilight .Storage {
-   color: #F9EE98;
-}
-pre.twilight .line-numbers {
-   background-color: #DDF0FF;
-   color: #000000;
-}
-pre.twilight .CssClass {
-   color: #9B703F;
-}
-pre.twilight .StringConstant {
-   color: #DDF2A4;
-}
-pre.twilight .CssAtRule {
-   color: #8693A5;
-}
-pre.twilight .MetaTagInline {
-   color: #E0C589;
-}
-pre.twilight .MarkupHeading {
-   color: #CF6A4C;
-}
-pre.twilight .CssTagName {
-   color: #CDA869;
-}
-pre.twilight .SupportConstant {
-   color: #CF6A4C;
-}
-pre.twilight .DiffDeleted {
-   background-color: #420E09;
-   color: #F8F8F8;
-}
-pre.twilight .CCCPreprocessorLine {
-   color: #8996A8;
-}
-pre.twilight .StringRegexpSpecial {
-   color: #CF7D34;
-}
-pre.twilight .EmbeddedSourceBright {
-   background-color: #9C9EA4;
-}
-pre.twilight .InvalidIllegal {
-   background-color: #241A24;
-   color: #F8F8F8;
-}
-pre.twilight .SupportFunction {
-   color: #DAD085;
-}
-pre.twilight .CssAdditionalConstants {
-   color: #CA7840;
-}
-pre.twilight .MetaTagAll {
-   color: #AC885B;
-}
-pre.twilight .StringRegexp {
-   color: #E9C062;
-}
-pre.twilight .StringEmbeddedSource {
-   color: #DAEFA3;
-}
-pre.twilight .EntityInheritedClass {
-   color: #9B5C2E;
-   font-style: italic;
-}
-pre.twilight .CssId {
-   color: #8B98AB;
-}
-pre.twilight .CssPseudoClass {
-   color: #8F9D6A;
-}
-pre.twilight .StringVariable {
-   color: #8A9A95;
-}
-pre.twilight .String {
-   color: #8F9D6A;
-}
-pre.twilight .Keyword {
-   color: #CDA869;
-}
-pre.twilight {
-   background-color: #141414;
-   color: #F8F8F8;
-}
-pre.twilight .CssPropertyName {
-   color: #C5AF75;
-}
-pre.twilight .DoctypeXmlProcessing {
-   color: #494949;
-}
-pre.twilight .InvalidDeprecated {
-   color: #D2A8A1;
-   font-style: italic;
-}
-pre.twilight .Variable {
-   color: #7587A6;
-}
-pre.twilight .Entity {
-   color: #9B703F;
-}
-pre.twilight .Comment {
-   color: #5F5A60;
-   font-style: italic;
-}
-
 ]]></b:skin>
   </head>
 
