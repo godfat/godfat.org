@@ -4,7 +4,7 @@ require 'nokogiri'
 def wiki html
   html.css('.skill').select{|s| s.css('.c2 strong')}.map{ |s|
     title = s.css('.c2 strong').text
-    link  = '<a href="http://estiah.aswt.net/index.php?title='
+    link  = '<a href="http://progenitor-softworks.com/ew/index.php?title='
     sprintf('%-20s %-15s %s',
       title,
       s.css('.percent').text.strip,
