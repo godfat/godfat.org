@@ -12,7 +12,7 @@
 by scm
 =end
 
-def fetch array, left, right
+def fetch left, right, array
   array[(right - left) / 2]
 end
 
@@ -24,7 +24,7 @@ def bsearch array, key
   puts "Finding #{key} in #{array.inspect}"
 
   left, right = 0, array.size
-  result = fetch array, left, right
+  result = fetch left, right, array
   log left, right, result
 
   while left != right && key != result
@@ -34,7 +34,7 @@ def bsearch array, key
       right = left + (right - left) / 2
     end
 
-    result = fetch array, left, right
+    result = fetch left, right, array
     log left, right, result
     sleep(0.5)
   end
