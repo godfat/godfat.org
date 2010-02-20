@@ -21,6 +21,7 @@ def bsearch array, key
 
   pos    = array.size / 2
   result = array[pos]
+  printf "pos: %2d, result: #{result}\n", pos
 
   while pos && result && key != result
     if result < key
@@ -30,6 +31,8 @@ def bsearch array, key
     end
 
     result = array[pos]
+    printf "pos: %2d, result: #{result}\n", pos
+    sleep(0.5)
   end
 
   if result
