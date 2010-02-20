@@ -43,6 +43,10 @@ def bsearch array, key
     sleep(0.5)
   end
 
+  if key != result && right - left == 1
+    fetch right, right, array
+  end
+
   if key == result
     puts "200 OK"
   else
