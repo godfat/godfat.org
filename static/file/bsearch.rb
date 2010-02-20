@@ -12,30 +12,30 @@
 by scm
 =end
 
-def mid_diff a, b
-  (a - b) / 2
+def fetch array, left, right
+  array[(right - left) / 2]
 end
 
-def log pos, result
-  printf "pos: %2d, result: #{result}\n", pos
+def log left, right, result
+  printf "pos: [%2d, %2d], result: #{result}\n", left, right
 end
 
 def bsearch array, key
   puts "Finding #{key} in #{array.inspect}"
 
-  pos    = array.size / 2
-  result = array[pos]
-  log pos, result
+  left, right = 0, array.size
+  result = fetch array, left, right
+  log left, right, result
 
-  while pos && result && key != result
+  while result && key != result
     if result < key
-      pos = pos + mid_diff(array.size, pos)
+      right = left + (right - left) / 2
     else
-      pos = pos - mid_diff(pos, 0)
+      left  = left + (right - left) / 2
     end
 
-    result = array[pos]
-    log pos, result
+    result = fetch array, left, right
+    log left, right, result
     sleep(0.5)
   end
 
