@@ -32,7 +32,7 @@ def bsearch array, key
   left, right = 0, array.size - 1
   result = fetch left, right, array
 
-  while (left - right).abs > 1 && key != result
+  while right - left > 1 && key != result
     if result < key
       left  = mid left, right
     else
