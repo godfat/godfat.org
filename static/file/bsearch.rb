@@ -29,9 +29,9 @@ def bsearch array, key
 
   while left != right && key != result
     if result < key
-      right = left + (right - left) / 2
-    else
       left  = left + (right - left) / 2
+    else
+      right = left + (right - left) / 2
     end
 
     result = fetch array, left, right
