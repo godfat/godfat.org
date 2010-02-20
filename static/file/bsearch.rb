@@ -44,7 +44,7 @@ def bsearch array, key
   end
 
   if key != result && right - left == 1
-    fetch right, right, array
+    result = fetch right, right, array
   end
 
   if key == result
