@@ -23,7 +23,7 @@ end
 def bsearch array, key
   puts "Finding #{key} in #{array.inspect}"
 
-  left, right = 0, array.size
+  left, right = 0, array.size - 1
   result = fetch left, right, array
   log left, right, result
 
