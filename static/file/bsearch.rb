@@ -39,7 +39,7 @@ def bsearch array, key
     sleep(0.5)
   end
 
-  if result
+  if key == result
     puts "200 OK"
   else
     puts "404 Not Found"
