@@ -17,7 +17,9 @@ def mid left, right
 end
 
 def fetch left, right, array
-  array[mid(left, right)]
+  result = array[mid(left, right)]
+  log left, right, result
+  result
 end
 
 def log left, right, result
@@ -29,7 +31,6 @@ def bsearch array, key
 
   left, right = 0, array.size - 1
   result = fetch left, right, array
-  log left, right, result
 
   while (left - right).abs > 1 && key != result
     if result < key
@@ -39,7 +40,6 @@ def bsearch array, key
     end
 
     result = fetch left, right, array
-    log left, right, result
     sleep(0.5)
   end
 
