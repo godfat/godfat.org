@@ -26,7 +26,7 @@ def bsearch array, key
     if result < key
       pos = pos + mid_diff(array.size, pos)
     else
-      pos = pos - mid_diff(pos, array.size)
+      pos = pos - mid_diff(pos, 0)
     end
 
     result = array[pos]
