@@ -16,12 +16,16 @@ def mid_diff a, b
   (a - b) / 2
 end
 
+def log pos, result
+  printf "pos: %2d, result: #{result}\n", pos
+end
+
 def bsearch array, key
   puts "Finding #{key} in #{array.inspect}"
 
   pos    = array.size / 2
   result = array[pos]
-  printf "pos: %2d, result: #{result}\n", pos
+  log pos, result
 
   while pos && result && key != result
     if result < key
@@ -31,7 +35,7 @@ def bsearch array, key
     end
 
     result = array[pos]
-    printf "pos: %2d, result: #{result}\n", pos
+    log pos, result
     sleep(0.5)
   end
 
