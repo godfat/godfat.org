@@ -50,8 +50,8 @@ def bsearch array, key
   end
 end
 
-max = rand(24)
-array = (0..max).map{ rand(max) }.sort
+max = rand(24) + 1
+array = (0...max).map{ rand(max) }.sort
 key = rand(max)
 
 bsearch(array, key)
