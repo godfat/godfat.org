@@ -12,8 +12,12 @@
 by scm
 =end
 
+def mid left, right
+  left + (right - left) / 2
+end
+
 def fetch left, right, array
-  array[(right - left) / 2]
+  array[mid(left, right)]
 end
 
 def log left, right, result
@@ -29,9 +33,9 @@ def bsearch array, key
 
   while (left - right).abs > 1 && key != result
     if result < key
-      left  = left + (right - left) / 2
+      left  = mid left, right
     else
-      right = left + (right - left) / 2
+      right = mid left, right
     end
 
     result = fetch left, right, array
