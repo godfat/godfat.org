@@ -7,7 +7,7 @@ var news  = ['#news-2007-08-23', '#news-2008-12-12',
 
 var items = ['#links', '#projects', '#slides', '#research',
              '#programming-languages', '#time-graphs',
-             '#favors', '#games', '#comic',
+             '#interests', '#favors', '#games', '#comic',
              '#composers', '#singers', '#albums',
              '#books', '#misc', '#headphone']
 
