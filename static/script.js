@@ -8,7 +8,7 @@ var news  = ['#news-2007-08-23', '#news-2008-12-12',
 var items = ['#links', '#projects', '#slides', '#research',
              '#programming-languages', '#time-graphs',
              '#interests', '#favors', '#games', '#comic',
-             '#composers', '#singers', '#albums',
+             '#composers', '#singers', '#music',
              '#books', '#misc', '#headphone']
 
 jQuery.each(
