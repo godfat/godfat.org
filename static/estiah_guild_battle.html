@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+body{ background-color: black; color: white; }
+.button_inner{
+padding:0 12px 0 12px;
+font-weight:bold;
+color:#333333 !important;
+}
+.button_ic3{
+background-color: lime;
+}
+.button_ic5{
+background-color: aqua;
+}
+/* =============== static format ============ */
+.format .pow { color:#FF0000; }
+.format .dex { color:#00FF00; }
+.format .int { color:#7777FF; }
+.format .con { color:#FF9900; }
+.format .spi { color:#FFFF00; }
+.format .up { color:#FF0000; }
+.format .down { color:#00FF00; }
+.format .card { color:#99FF99; text-decoration:none; }
+.format .skill { color:#FFF21E; text-decoration:none;  }
+.format .item { color:#FF8484; text-decoration:none;  }
+.format .move { color:#88AAFF; }
+.format .inv { color:#FFDDAA; }
+.format .fbuilding { color:#6688FF; }
+
+.format .god { color:#FFBBBB; }
+.format .admin { color:#BBBBFF; }
+.format .vip { color:#FFDDBB; }
+.format .donator { color:#BBBBFF; }
+
+.format .guildmaster { color:#FFBBBB; }
+.format .officer { color:#FFDDBB; }
+.format .veteran { color:#BBBBFF; }
+
+.format .lpow { color:#990000; }
+.format .ldex { color:#009900; }
+.format .lint { color:#555599; }
+.format .lcon { color:#995522; }
+.format .lspi { color:#999900; }
+.format .lhp { color:#999999; }
+.format .linv { color:#886655; }
+.format .litem { color:#883333; }
+
+.format .cvendor { color:#CBE19C; }
+.format .ctreasure { color:#00AA08; }
+.format .crare { color:#3F68FF; }
+.format .ccraft { color:#DE9D1F; }
+.format .cclass { color:#FF4105; }
+.format .cepic { color:#892EDD; }
+.format .cseal { color:#96CBEC; }
+
+.format .ivendor { color:#777777; }
+.format .itreasure { color:#ACE17C; }
+.format .irare { color:#96CBEC; }
+.format .iusable { color:#EE8165; }
+.format .ipvp { color:#CC9966; }
+.format .iepic { color:#892EDD; }
+
+.format .rss_type0 { color:#EEEEEE; }
+.format .rss_type1 { color:#FFCC66; }
+.format .rss_type2 { color:#888888; }
+.format .rss_type3 { color:#66FF66; }
+.format .rss_type4 { color:#77CCFF; }
+.format .rss_type5 { color:#FF9999; }
+.format .rss_type6 { color:#AA77FF; }
+/* =================== combat log ============ */
+.log .player { color:#FFCC00; }
+.log .armor { color:#FF66AA; }
+.log .ward { color:#33CCCC; }
+.log .melee { color:#FF6666; }
+.log .magic { color:#9999FF; }
+.log .card { color:#99FF99; text-decoration:none; }
+.log .spirit { color:#CC9966; }
+.log .willpower { color:#FF6600; }
+.log .special { color:#22AA22; }
+.log .status, .log .status div { color:#999999; }
+</style>
+</head>
+<body>
+<div class="section_title c2">Battle Replay</div>
+<div class="section_text">
+View your past victories or analyze your failed attempts, battle replayer is a very useful tool.
+</div>
+<div class="section_text format">
+Your gear used in this fight :<br><br><a class="card ccraft BV_system_file">Fury Potion</a> (5)<br><a class="card crare BV_system_file">Quick Blade</a> (3)<br><a class="card ctreasure BV_system_file">Linking Ice</a> (5)<br><a class="card ccraft BV_system_file">Power Surge</a> (1)<br><a class="card ccraft BV_system_file">Gemmed Fangs</a> (5)<br><a class="card ccraft BV_system_file">Gemmed Lance</a> (2)<br><a class="card ctreasure BV_system_file">Bright Swords</a> (1)<br><a class="card cclass BV_system_file">Novice's Flail</a> (5)<br><a class="card cclass BV_system_file">Novice's Hidden Blades</a> (5)<br><a class="card ccraft BV_system_file">Tears of Blood</a> (2)<br><a class="card crare BV_system_file">Blind Fury</a> (5)<br><a class="card crare BV_system_file">Night Cloak</a> (2)<br>
+</div>
+<div class="battle">
+<div id="VsWinner" class="winner c2">Team (Sdo1982, Helen, Papaj42, Godfat) is victorious!</div>
+<div id="VsGain" class="gain format log">
+</div>
+<div style="height: auto;" class="msg log" id="VsMsg">
+<div class="section_text">
+<div class="section_text">After the battle replay, you can</div>
+<div class="decision button button_c3">
+<a class="button_inner button_ic3">Go Back to Report</a>
+</div>
+<div class="decision button button_c5">
+<a class="button_inner button_ic5">Go to Your Guild</a>
+</div>
+<div class="decision button button_c5">
+<a class="button_inner button_ic5">View Your Character</a>
+</div>
+</div>
+<div class="index">1</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card cclass BV_system_file">[Fighter's War Axe]</a><br><span class="player">Sheetaah</span>'s <span class="special">armor drops to 0</span><br><span class="player">Sheetaah</span> takes <span class="melee">25 melee damage</span> <br>
+</div>
+<div class="index">2</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card crare BV_system_file">[Blind Fury]</a><br><span class="player">Godfat</span>'s <span class="special">armor drops to 0</span><br><span class="player">Godfat</span>'s <span class="special">ward drops to 0</span><br><span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 45</span><br>
+</div>
+<div class="index">3</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Recruit's Flail]</a><br><span class="player">Gwalchmai</span>'s <span class="armor">armor</span> raises to <span class="armor">32</span><br><span class="player">Sdo1982</span> takes <span class="melee">26 melee damage</span> <br>
+</div>
+<div class="index">4</div>
+<div class="turn">
+<span class="player">Tornenj</span> uses <a class="card cclass BV_system_file">[Guard Sting]</a><br><span class="player">Sdo1982</span> takes <span class="melee">21 melee damage</span> <br><span class="player">Sdo1982</span> takes <span class="melee">0 melee damage</span> <br><span class="player">Tornenj</span>'s <span class="armor">armor</span> raises to <span class="armor">17</span><br>
+</div>
+<div class="index">5</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card ccraft BV_system_file">[Honor Daggers]</a><br><span class="player">Helen</span> takes <span class="melee">34 melee damage</span> <br>
+</div>
+<div class="index">6</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card ctreasure BV_system_file">[Searing Flamberge]</a><br><span class="player">Sdo1982</span> takes <span class="melee">23 melee damage</span> <br><span class="player">Sdo1982</span> is afflicted by <span class="special">burn</span><br>
+</div>
+<div class="index">7</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Steel Axe]</a><br><span class="player">Tornenj</span> takes <span class="melee">13 melee damage</span> (<span class="armor">16 absorbed, 1 pierced</span>)<br>Because of <span class="special">Burn</span>, <span class="player">Sdo1982</span> takes <span class="magic">5 magic damage</span> <br>
+</div>
+<div class="index">8</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Leadership]</a><br><span class="player">Sdo1982</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Helen</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Papaj42</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Godfat</span>'s melee attacks are <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">9</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ctreasure BV_system_file">[Diapason Axe]</a><br><span class="player">Sheetaah</span> takes <span class="melee">19 melee damage</span> <br><span class="player">Papaj42</span>'s next melee attack is <span class="special">increased by up to 16</span><br>
+</div>
+<div class="index">10</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card crare BV_system_file">[Blind Fury]</a><br><span class="player">Godfat</span>'s <span class="special">armor drops to 0</span><br><span class="player">Godfat</span>'s <span class="special">ward drops to 0</span><br><span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 45</span><br>
+</div>
+<div class="index">11</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Guard Strategic Strike]</a><br><span class="player">Godfat</span> takes <span class="melee">28 melee damage</span> <br><span class="player">Gwalchmai</span>'s <span class="armor">armor</span> raises to <span class="armor">83</span><br>
+</div>
+<div class="index">12</div>
+<div class="turn">
+<span class="player">Tornenj</span> uses <a class="card crare BV_system_file">[Release Seal]</a><br><span class="player">Tornenj</span> <span class="special">loses 11 life</span><br><span class="player">Tornenj</span>'s <span class="willpower">willpower</span> raises to <span class="willpower">2</span><br><span class="player">Tornenj</span> gains <span class="special">releasing seal</span><br>
+</div>
+<div class="index">13</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card cclass BV_system_file">[Scout's Knives]</a><br><span class="player">Sdo1982</span> takes <span class="melee">16 melee damage</span> <br><span class="player">Sdo1982</span> is afflicted by <span class="special">bleed</span><br>
+</div>
+<div class="index">14</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card cvendor BV_system_file">[Earth Blast]</a><br><span class="player">Papaj42</span> takes <span class="magic">40 magic damage</span> <br><span class="player">Papaj42</span> takes <span class="melee">13 melee damage</span> <br>
+</div>
+<div class="index">15</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Steel Legplates]</a><br><span class="player">Sdo1982</span>'s <span class="armor">armor</span> raises to <span class="armor">61</span><br>Because of <span class="special">Burn</span>, <span class="player">Sdo1982</span> takes <span class="magic">5 magic damage</span> <br>Because of <span class="special">Bleed</span>, <span class="player">Sdo1982</span> takes <span class="melee">0 melee damage</span> (<span class="armor">6 absorbed</span>)<br>
+</div>
+<div class="index">16</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Leadership]</a><br><span class="player">Sdo1982</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Helen</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Papaj42</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Godfat</span>'s melee attacks are <span class="special">increased by up to 7</span><br><br><span class="status"> ** Battle status ** </span><br><span class="status">Sdo1982 : <strong>200/296</strong> HP, <strong>55</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>29/31</strong> Charm(s) left</span><br><span class="status">Helen : <strong>521/555</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>39/41</strong> Charm(s) left</span><br><span class="status">Papaj42 : <strong>321/374</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>32/34</strong> Charm(s) left</span><br><span class="status">Godfat : <strong>405/433</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>39/41</strong> Charm(s) left</span><br>------<br><span class="status">Gwalchmai : <strong>406/580</strong> HP, <strong>83</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>26/39</strong> Charm(s) left</span><br><span class="status">Tornenj : <strong>403/610</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>2</strong> Willpower, <strong>28/42</strong> Charm(s) left</span><br><span class="status">Kaliyuga : <strong>462/661</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>27/41</strong> Charm(s) left</span><br><span class="status">Sheetaah : <strong>455/714</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>31/46</strong> Charm(s) left</span><br>
+</div>
+<div class="index">17</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Duelist Chest]</a><br><span class="player">Papaj42</span>'s <span class="armor">armor</span> raises to <span class="armor">76</span><br>
+</div>
+<div class="index">18</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card crare BV_system_file">[Blind Fury]</a><br><span class="player">Godfat</span>'s <span class="special">armor drops to 0</span><br><span class="player">Godfat</span>'s <span class="special">ward drops to 0</span><br><span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 45</span><br>
+</div>
+<div class="index">19</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Recruit's Flail]</a><br><span class="player">Gwalchmai</span>'s <span class="armor">armor</span> raises to <span class="armor">115</span><br><span class="player">Godfat</span> takes <span class="melee">26 melee damage</span> <br>
+</div>
+<div class="index">20</div>
+<div class="turn">
+<span class="player">Tornenj</span> uses <a class="card ccraft BV_system_file">[Challenger's Pike]</a><br><span class="player">Papaj42</span> takes <span class="melee">6 melee damage</span> (<span class="armor">37 absorbed, 6 pierced</span>)<br><span class="player">Tornenj</span>'s <span class="armor">armor</span> raises to <span class="armor">17</span><br>
+</div>
+<div class="index">21</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card cclass BV_system_file">[Rogue Blade Rain]</a><br><span class="player">Sdo1982</span> takes <span class="melee">0 melee damage</span> (<span class="armor">24 absorbed</span>)<br><span class="player">Helen</span> takes <span class="melee">24 melee damage</span> <br><span class="player">Papaj42</span> takes <span class="melee">0 melee damage</span> (<span class="armor">24 absorbed</span>)<br><span class="player">Godfat</span> takes <span class="melee">24 melee damage</span> <br>
+</div>
+<div class="index">22</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card cvendor BV_system_file">[Earth Blast]</a><br><span class="player">Godfat</span> takes <span class="magic">40 magic damage</span> <br><span class="player">Godfat</span> takes <span class="melee">13 melee damage</span> <br>
+</div>
+<div class="index">23</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Steel Axe]</a><br><span class="player">Kaliyuga</span> takes <span class="melee">43 melee damage</span> <br>Because of <span class="special">Burn</span>, <span class="player">Sdo1982</span> takes <span class="magic">5 magic damage</span> <br>Because of <span class="special">Bleed</span>, <span class="player">Sdo1982</span> takes <span class="melee">0 melee damage</span> (<span class="armor">6 absorbed</span>)<br>
+</div>
+<div class="index">24</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card ccraft BV_system_file">[Gemmed Lance]</a><br><span class="player">Tornenj</span> takes <span class="melee">26 melee damage</span> (<span class="armor">15 absorbed, 2 pierced</span>)<br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">13</span><br><span class="player">Helen</span> designates <span class="player">Tornenj</span> as the <span class="special">focus</span> for 5 actions<br>
+</div>
+<div class="index">25</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card cvendor BV_system_file">[Hardened Steel Axe]</a><br><span class="player">Tornenj</span> takes <span class="melee">66 melee damage</span> <br>
+</div>
+<div class="index">26</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card ctreasure BV_system_file">[Linking Ice]</a><br><span class="player">Tornenj</span> takes <span class="magic">20 magic damage</span> <br><span class="player">Godfat</span> designates <span class="player">Tornenj</span> as the <span class="special">focus</span> for 8 actions<br>
+</div>
+<div class="index">27</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Recruit's Pike]</a><br><span class="player">Gwalchmai</span>'s <span class="armor">armor</span> raises to <span class="armor">154</span><br><span class="player">Sdo1982</span> takes <span class="melee">3 melee damage</span> (<span class="armor">20 absorbed, 3 pierced</span>)<br>
+</div>
+<div class="index">28</div>
+<div class="turn">
+<span class="player">Tornenj</span> uses <a class="card cclass BV_system_file">[Guard Tactics]</a><br><span class="player">Gwalchmai</span>'s melee attacks are <span class="special">increased by up to 6</span><br><span class="player">Tornenj</span>'s melee attacks are <span class="special">increased by up to 6</span><br><span class="player">Kaliyuga</span>'s melee attacks are <span class="special">increased by up to 6</span><br><span class="player">Sheetaah</span>'s melee attacks are <span class="special">increased by up to 6</span><br>
+</div>
+<div class="index">29</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card crare BV_system_file">[Howling Wind]</a><br><span class="player">Kaliyuga</span>'s melee attacks are <span class="special">increased by up to 6</span><br>
+</div>
+<div class="index">30</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card ccraft BV_system_file">[Hyphused Beater]</a><br><span class="player">Sdo1982</span>'s <span class="special">armor drops to 0</span><br><span class="player">Sdo1982</span> takes <span class="melee">33 melee damage</span> <br><span class="player">Sheetaah</span>'s melee attacks are <span class="special">increased by up to 6</span><br>
+</div>
+<div class="index">31</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card crare BV_system_file">[Hathnuz]</a><br><span class="player">Sdo1982</span> <span class="special">loses 8 life</span><br><span class="player">Sdo1982</span> summons a <span class="special">Hathnuz</span><br>Because of <span class="special">Burn</span>, <span class="player">Sdo1982</span> takes <span class="magic">5 magic damage</span> <br>Because of <span class="special">Bleed</span>, <span class="player">Sdo1982</span> takes <span class="melee">6 melee damage</span> <br><span class="special">Hathnuz</span> defends his master, <span class="player">Sdo1982</span>'s <span class="armor">armor</span> raises to <span class="armor">17</span><br>
+</div>
+<div class="index">32</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Battle Spear]</a><br><span class="player">Tornenj</span> takes <span class="melee">37 melee damage</span> <br><span class="player">Tornenj</span> takes <span class="melee">13 melee damage</span> <br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">32</span><br><br><span class="status"> ** Battle status ** </span><br><span class="status">Sdo1982 : <strong>140/296</strong> HP, <strong>17</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>27/31</strong> Charm(s) left</span><br><span class="status">Helen : <strong>497/555</strong> HP, <strong>32</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>37/41</strong> Charm(s) left</span><br><span class="status">Papaj42 : <strong>315/374</strong> HP, <strong>9</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>30/34</strong> Charm(s) left</span><br><span class="status">Godfat : <strong>302/433</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>37/41</strong> Charm(s) left</span><br>------<br><span class="status">Gwalchmai : <strong>406/580</strong> HP, <strong>154</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>24/39</strong> Charm(s) left</span><br><span class="status">Tornenj : <strong>241/610</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>2</strong> Willpower, <strong>26/42</strong> Charm(s) left</span><br><span class="status">Kaliyuga : <strong>419/661</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>25/41</strong> Charm(s) left</span><br><span class="status">Sheetaah : <strong>455/714</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>29/46</strong> Charm(s) left</span><br>
+</div>
+<div class="index">33</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Honor Legplates]</a><br><span class="player">Papaj42</span>'s <span class="armor">armor</span> raises to <span class="armor">91</span><br>
+</div>
+<div class="index">34</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card ccraft BV_system_file">[Fury Potion]</a><br><span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 47</span><br><span class="player">Godfat</span> is affected by <span class="special">fury potion</span><br><span class="special">Fury potion</span> takes effect, <span class="player">Godfat</span> <span class="special">loses 3 life</span><br>
+</div>
+<div class="index">35</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Guard Strategic Strike]</a><br><span class="player">Papaj42</span> takes <span class="melee">0 melee damage</span> (<span class="armor">34 absorbed</span>)<br><span class="player">Gwalchmai</span>'s <span class="armor">armor</span> raises to <span class="armor">205</span><br>
+</div>
+<div class="index">36</div>
+<div class="turn">
+<span class="player">Tornenj</span> uses <a class="card crare BV_system_file">[Release Seal]</a><br><span class="player">Tornenj</span> <span class="special">loses 11 life</span><br><span class="player">Tornenj</span>'s <span class="willpower">willpower</span> remains at <span class="willpower">2</span><br><span class="player">Tornenj</span> gains <span class="special">releasing seal</span><br><span class="special">Releasing seal</span> takes effect, <span class="player">Tornenj</span>'s next melee attack is <span class="special">increased by up to 72</span><br>
+</div>
+<div class="index">37</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card ctreasure BV_system_file">[Axe of Resolve]</a><br><span class="player">Papaj42</span> takes <span class="melee">3 melee damage</span> (<span class="armor">37 absorbed, 3 pierced</span>)<br><span class="player">Kaliyuga</span>'s <span class="willpower">willpower</span> raises to <span class="willpower">2</span><br>
+</div>
+<div class="index">38</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card ccraft BV_system_file">[Challenger's Axe]</a><br><span class="player">Godfat</span> takes <span class="melee">64 melee damage</span> <br>
+</div>
+<div class="index">39</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Burning Palm]</a><br><span class="player">Tornenj</span> takes <span class="magic">31 magic damage</span> <br>Because of <span class="special">Burn</span>, <span class="player">Sdo1982</span> takes <span class="magic">5 magic damage</span> <br>Because of <span class="special">Bleed</span>, <span class="player">Sdo1982</span> takes <span class="melee">0 melee damage</span> (<span class="armor">6 absorbed</span>)<br><span class="special">Hathnuz</span> protects his master, <span class="player">Sdo1982</span>'s <span class="ward">ward</span> raises to <span class="ward">17</span><br>
+</div>
+<div class="index">40</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card ccraft BV_system_file">[White Sealing Orb]</a><br><span class="status">A photonic seal begins to form</span><br><span class="player">Sdo1982</span> <span class="special">heals 26 damage</span><br><span class="player">Helen</span> <span class="special">heals 26 damage</span><br><span class="player">Papaj42</span> <span class="special">heals 26 damage</span><br><span class="player">Godfat</span> <span class="special">heals 26 damage</span><br>
+</div>
+<div class="index">41</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Honor Axe]</a><br><span class="player">Tornenj</span> takes <span class="melee">58 melee damage</span> <br>
+</div>
+<div class="index">42</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card ccraft BV_system_file">[Gemmed Fangs]</a><br><span class="player">Tornenj</span>'s <span class="special">armor drops to 0</span><br><span class="player">Tornenj</span> takes <span class="melee">224 melee damage</span> <br><span class="player">Godfat</span> designates <span class="player">Tornenj</span> as the <span class="special">focus</span> for 5 actions<br><br><span class="status"> <strong>Tornenj</strong> is defeated. </span><br><br><span class="special">Fury potion</span> takes effect, <span class="player">Godfat</span> <span class="special">loses 3 life</span><br>
+</div>
+<div class="index">43</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card ccraft BV_system_file">[Honor Mace]</a><br><span class="player">Papaj42</span> takes <span class="melee">35 melee damage</span> (<span class="armor">17 absorbed</span>)<br>
+</div>
+<div class="index">44</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card ccraft BV_system_file">[Duelist Daggers]</a><br><span class="player">Papaj42</span> takes <span class="melee">40 melee damage</span> <br>
+</div>
+<div class="index">45</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card ccraft BV_system_file">[Hyphused Beater]</a><br><span class="player">Sdo1982</span>'s <span class="special">armor drops to 0</span><br><span class="player">Sdo1982</span> takes <span class="melee">39 melee damage</span> <br><span class="player">Sheetaah</span>'s melee attacks are <span class="special">increased by up to 6</span><br>
+</div>
+<div class="index">46</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Steel Hammer]</a><br><span class="player">Sheetaah</span> takes <span class="melee">45 melee damage</span> <br>Because of <span class="special">Burn</span>, <span class="player">Sdo1982</span> takes <span class="magic">2 magic damage</span> (<span class="ward">3 warded, 2 pierced</span>)<br><span class="special">Hathnuz</span> protects his master, <span class="player">Sdo1982</span>'s <span class="ward">ward</span> raises to <span class="ward">17</span><br><br><span class="status"> ** Battle status ** </span><br><span class="status">Sdo1982 : <strong>120/296</strong> HP, <strong>0</strong> Armor, <strong>17</strong> Ward, <strong>0</strong> Willpower, <strong>25/31</strong> Charm(s) left</span><br><span class="status">Helen : <strong>523/555</strong> HP, <strong>32</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>36/41</strong> Charm(s) left</span><br><span class="status">Papaj42 : <strong>263/374</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>28/34</strong> Charm(s) left</span><br><span class="status">Godfat : <strong>258/433</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>35/41</strong> Charm(s) left</span><br>------<br><span class="status">Gwalchmai : <strong>406/580</strong> HP, <strong>205</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>22/39</strong> Charm(s) left</span><br><span class="status">Kaliyuga : <strong>419/661</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>2</strong> Willpower, <strong>23/41</strong> Charm(s) left</span><br><span class="status">Sheetaah : <strong>410/714</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>27/46</strong> Charm(s) left</span><br>
+</div>
+<div class="index">47</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Battle Spear]</a><br><span class="player">Kaliyuga</span> takes <span class="melee">37 melee damage</span> <br><span class="player">Kaliyuga</span> takes <span class="melee">32 melee damage</span> <br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">51</span><br>
+</div>
+<div class="index">48</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Duelist Axe]</a><br><span class="player">Kaliyuga</span> takes <span class="melee">51 melee damage</span> <br>
+</div>
+<div class="index">49</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card cclass BV_system_file">[Novice's Hidden Blades]</a><br><span class="player">Sheetaah</span> takes <span class="melee">32 melee damage</span> <br><span class="player">Godfat</span> gains <span class="special">meditation</span><br><span class="special">Fury potion</span> takes effect, <span class="player">Godfat</span> <span class="special">loses 3 life</span><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">50</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Guard Leadership]</a><br><span class="player">Gwalchmai</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Kaliyuga</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Sheetaah</span>'s melee attacks are <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">51</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card cclass BV_system_file">[Rogue Blade Rain]</a><br><span class="player">Sdo1982</span> takes <span class="melee">30 melee damage</span> <br><span class="player">Helen</span> takes <span class="melee">0 melee damage</span> (<span class="armor">30 absorbed</span>)<br><span class="player">Papaj42</span> takes <span class="melee">30 melee damage</span> <br><span class="player">Godfat</span> takes <span class="melee">30 melee damage</span> <br>
+</div>
+<div class="index">52</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card ccraft BV_system_file">[Sylan Heavy Axe]</a><br><span class="player">Godfat</span> takes <span class="melee">66 melee damage</span> <br><span class="player">Godfat</span> takes <span class="magic">13 magic damage</span> <br>
+</div>
+<div class="index">53</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Steel Axe]</a><br><span class="player">Gwalchmai</span> takes <span class="melee">3 melee damage</span> (<span class="armor">40 absorbed, 3 pierced</span>)<br><span class="special">Hathnuz</span> defends his master, <span class="player">Sdo1982</span>'s <span class="armor">armor</span> raises to <span class="armor">17</span><br>
+</div>
+<div class="index">54</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Leadership]</a><br><span class="player">Sdo1982</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Helen</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Papaj42</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Godfat</span>'s melee attacks are <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">55</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Honor Legplates]</a><br><span class="player">Papaj42</span>'s <span class="armor">armor</span> raises to <span class="armor">91</span><br>
+</div>
+<div class="index">56</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card ccraft BV_system_file">[Gemmed Fangs]</a><br><span class="player">Kaliyuga</span>'s <span class="special">armor drops to 0</span><br><span class="player">Kaliyuga</span> takes <span class="melee">56 melee damage</span> <br><span class="player">Godfat</span> designates <span class="player">Kaliyuga</span> as the <span class="special">focus</span> for 5 actions<br><span class="special">Fury potion</span> takes effect, <span class="player">Godfat</span> <span class="special">loses 3 life</span><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">57</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Guard War Hammer]</a><br><span class="player">Papaj42</span> takes <span class="melee">0 melee damage</span> (<span class="armor">43 absorbed</span>)<br><span class="player">Papaj42</span> takes <span class="melee">0 melee damage</span> (<span class="armor">46 absorbed</span>)<br>
+</div>
+<div class="index">58</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card cclass BV_system_file">[Rogue Green Death]</a><br><span class="player">Helen</span> takes <span class="melee">29 melee damage</span> (<span class="armor">18 absorbed, 3 pierced</span>)<br><span class="player">Helen</span> is afflicted by <span class="special">poison</span><br>
+</div>
+<div class="index">59</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card ccraft BV_system_file">[Sylan Heavy Axe]</a><br><span class="player">Sdo1982</span> takes <span class="melee">50 melee damage</span> (<span class="armor">16 absorbed, 1 pierced</span>)<br><span class="player">Sdo1982</span> takes <span class="magic">1 magic damage</span> (<span class="ward">12 warded, 1 pierced</span>)<br>
+</div>
+<div class="index">60</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Rock Palm]</a><br><span class="player">Kaliyuga</span> takes <span class="magic">24 magic damage</span> <br><span class="player">Kaliyuga</span> takes <span class="melee">29 melee damage</span> <br><span class="special">Hathnuz</span> protects his master, <span class="player">Sdo1982</span>'s <span class="ward">ward</span> raises to <span class="ward">17</span><br><br><span class="status"> ** Battle status ** </span><br><span class="status">Sdo1982 : <strong>39/296</strong> HP, <strong>0</strong> Armor, <strong>17</strong> Ward, <strong>0</strong> Willpower, <strong>23/31</strong> Charm(s) left</span><br><span class="status">Helen : <strong>494/555</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>34/41</strong> Charm(s) left</span><br><span class="status">Papaj42 : <strong>233/374</strong> HP, <strong>2</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>26/34</strong> Charm(s) left</span><br><span class="status">Godfat : <strong>143/433</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>33/41</strong> Charm(s) left</span><br>------<br><span class="status">Gwalchmai : <strong>403/580</strong> HP, <strong>162</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>20/39</strong> Charm(s) left</span><br><span class="status">Kaliyuga : <strong>190/661</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>2</strong> Willpower, <strong>21/41</strong> Charm(s) left</span><br><span class="status">Sheetaah : <strong>378/714</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>25/46</strong> Charm(s) left</span><br>
+</div>
+<div class="index">61</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Strategic Blow]</a><br><span class="player">Kaliyuga</span> takes <span class="melee">52 melee damage</span> <br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">57</span><br>Because of <span class="special">Poison</span>, <span class="player">Helen</span> takes <span class="melee">3 melee damage</span> (<span class="armor">5 absorbed, 3 pierced</span>)<br>
+</div>
+<div class="index">62</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card cvendor BV_system_file">[Hardened Steel Axe]</a><br><span class="player">Kaliyuga</span> takes <span class="melee">57 melee damage</span> <br>
+</div>
+<div class="index">63</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card crare BV_system_file">[Quick Blade]</a><br><span class="player">Godfat</span> gains <span class="special">1 extra action </span><br><span class="player">Kaliyuga</span> takes <span class="melee">17 melee damage</span> <br><span class="special">Fury potion</span> takes effect, <span class="player">Godfat</span> <span class="special">loses 3 life</span><br>
+</div>
+<div class="index">64</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card cclass BV_system_file">[Novice's Hidden Blades]</a><br><span class="player">Kaliyuga</span> takes <span class="melee">39 melee damage</span> <br><span class="player">Godfat</span> gains <span class="special">meditation</span><br><span class="special">Fury potion</span> takes effect, <span class="player">Godfat</span> <span class="special">loses 3 life</span><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">65</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card crare BV_system_file">[Blind Fury]</a><br><span class="player">Gwalchmai</span>'s <span class="special">armor drops to 136</span><br><span class="player">Gwalchmai</span>'s <span class="special">ward drops to 0</span><br><span class="player">Gwalchmai</span>'s next melee attack is <span class="special">increased by up to 45</span><br>
+</div>
+<div class="index">66</div>
+<div class="turn">
+<span class="player">Kaliyuga</span> uses <a class="card ccraft BV_system_file">[Renegade Daggers]</a><br><span class="player">Helen</span> takes <span class="melee">16 melee damage</span> (<span class="armor">29 absorbed, 16 pierced</span>)<br><span class="player">Kaliyuga</span> designates <span class="player">Helen</span> as the <span class="special">focus</span> for 7 actions<br>
+</div>
+<div class="index">67</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card ccraft BV_system_file">[Sylan Heavy Axe]</a><br><span class="player">Helen</span> takes <span class="melee">62 melee damage</span> (<span class="armor">4 absorbed</span>)<br><span class="player">Helen</span> takes <span class="magic">13 magic damage</span> <br>
+</div>
+<div class="index">68</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Burning Palm]</a><br><span class="player">Kaliyuga</span> takes <span class="magic">31 magic damage</span> <br><br><span class="status"> <strong>Kaliyuga</strong> is defeated. </span><br><br><span class="special">Hathnuz</span> protects his master, <span class="player">Sdo1982</span>'s <span class="ward">ward</span> remains at <span class="ward">17</span><br>
+</div>
+<div class="index">69</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card ccraft BV_system_file">[Gemmed Lance]</a><br><span class="player">Sheetaah</span> takes <span class="melee">48 melee damage</span> <br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">13</span><br><span class="player">Helen</span> designates <span class="player">Sheetaah</span> as the <span class="special">focus</span> for 5 actions<br>Because of <span class="special">Poison</span>, <span class="player">Helen</span> takes <span class="melee">3 melee damage</span> (<span class="armor">5 absorbed, 3 pierced</span>)<br>
+</div>
+<div class="index">70</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Honor Legplates]</a><br><span class="player">Papaj42</span>'s <span class="armor">armor</span> raises to <span class="armor">91</span><br>
+</div>
+<div class="index">71</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card crare BV_system_file">[Quick Blade]</a><br><span class="player">Godfat</span> gains <span class="special">1 extra action </span><br><span class="player">Sheetaah</span> takes <span class="melee">24 melee damage</span> <br>
+</div>
+<div class="index">72</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card ctreasure BV_system_file">[Bright Swords]</a><br><span class="player">Sheetaah</span> takes <span class="melee">38 melee damage</span> <br><span class="player">Godfat</span> designates <span class="player">Sheetaah</span> as the <span class="special">focus</span> for 7 actions<br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br><br><span class="status"> ** Battle status ** </span><br><span class="status">Sdo1982 : <strong>39/296</strong> HP, <strong>0</strong> Armor, <strong>17</strong> Ward, <strong>0</strong> Willpower, <strong>22/31</strong> Charm(s) left</span><br><span class="status">Helen : <strong>397/555</strong> HP, <strong>5</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>32/41</strong> Charm(s) left</span><br><span class="status">Papaj42 : <strong>233/374</strong> HP, <strong>91</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>24/34</strong> Charm(s) left</span><br><span class="status">Godfat : <strong>137/433</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>29/41</strong> Charm(s) left</span><br>------<br><span class="status">Gwalchmai : <strong>403/580</strong> HP, <strong>136</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>19/39</strong> Charm(s) left</span><br><span class="status">Sheetaah : <strong>268/714</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>24/46</strong> Charm(s) left</span><br>
+</div>
+<div class="index">73</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Guard Leadership]</a><br><span class="player">Gwalchmai</span>'s melee attacks are <span class="special">increased by up to 7</span><br><span class="player">Sheetaah</span>'s melee attacks are <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">74</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card cvendor BV_system_file">[Alloyed Tellium Claws]</a><br><span class="player">Helen</span>'s <span class="special">armor drops to 0</span><br><span class="player">Helen</span> takes <span class="melee">77 melee damage</span> <br>
+</div>
+<div class="index">75</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Rock Palm]</a><br><span class="player">Sheetaah</span> takes <span class="magic">24 magic damage</span> <br><span class="player">Sheetaah</span> takes <span class="melee">29 melee damage</span> <br><span class="special">Hathnuz</span> defends his master, <span class="player">Sdo1982</span>'s <span class="armor">armor</span> raises to <span class="armor">17</span><br>
+</div>
+<div class="index">76</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Strategic Strike]</a><br><span class="player">Sheetaah</span> takes <span class="melee">49 melee damage</span> <br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">51</span><br>Because of <span class="special">Poison</span>, <span class="player">Helen</span> takes <span class="melee">3 melee damage</span> (<span class="armor">5 absorbed, 3 pierced</span>)<br>
+</div>
+<div class="index">77</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card crare BV_system_file">[Blind Fury]</a><br><span class="player">Papaj42</span>'s <span class="special">armor drops to 65</span><br><span class="player">Papaj42</span>'s <span class="special">ward drops to 0</span><br><span class="player">Papaj42</span>'s next melee attack is <span class="special">increased by up to 45</span><br>
+</div>
+<div class="index">78</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card ccraft BV_system_file">[Gemmed Fangs]</a><br><span class="player">Sheetaah</span>'s <span class="special">armor drops to 0</span><br><span class="player">Sheetaah</span> takes <span class="melee">63 melee damage</span> <br><span class="player">Godfat</span> designates <span class="player">Sheetaah</span> as the <span class="special">focus</span> for 5 actions<br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">79</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Recruit's Flail]</a><br><span class="player">Gwalchmai</span>'s <span class="armor">armor</span> raises to <span class="armor">168</span><br><span class="player">Helen</span> takes <span class="melee">48 melee damage</span> (<span class="armor">43 absorbed</span>)<br>
+</div>
+<div class="index">80</div>
+<div class="turn">
+<span class="player">Sheetaah</span> uses <a class="card ccraft BV_system_file">[Hyphused Beater]</a><br><span class="player">Helen</span>'s <span class="special">armor drops to 0</span><br><span class="player">Helen</span> takes <span class="melee">59 melee damage</span> <br><span class="player">Sheetaah</span>'s melee attacks are <span class="special">increased by up to 6</span><br>
+</div>
+<div class="index">81</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Steel Axe]</a><br><span class="player">Sheetaah</span> takes <span class="melee">50 melee damage</span> <br><span class="special">Hathnuz</span> protects his master, <span class="player">Sdo1982</span>'s <span class="ward">ward</span> remains at <span class="ward">17</span><br>
+</div>
+<div class="index">82</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Strategic Blow]</a><br><span class="player">Sheetaah</span> takes <span class="melee">52 melee damage</span> <br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">57</span><br>Because of <span class="special">Poison</span>, <span class="player">Helen</span> takes <span class="melee">3 melee damage</span> (<span class="armor">5 absorbed, 3 pierced</span>)<br>
+</div>
+<div class="index">83</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Warrior's Battle Shout]</a><br><span class="player">Papaj42</span>'s melee attacks are <span class="special">increased by up to 4</span><br>
+</div>
+<div class="index">84</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card cclass BV_system_file">[Novice's Hidden Blades]</a><br><span class="player">Sheetaah</span> takes <span class="melee">46 melee damage</span> <br><span class="player">Godfat</span> gains <span class="special">meditation</span><br><br><span class="status"> <strong>Sheetaah</strong> is defeated. </span><br><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br><br><span class="status"> ** Battle status ** </span><br><span class="status">Sdo1982 : <strong>39/296</strong> HP, <strong>17</strong> Armor, <strong>17</strong> Ward, <strong>0</strong> Willpower, <strong>20/31</strong> Charm(s) left</span><br><span class="status">Helen : <strong>207/555</strong> HP, <strong>49</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>30/41</strong> Charm(s) left</span><br><span class="status">Papaj42 : <strong>233/374</strong> HP, <strong>65</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>22/34</strong> Charm(s) left</span><br><span class="status">Godfat : <strong>137/433</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>27/41</strong> Charm(s) left</span><br>------<br><span class="status">Gwalchmai : <strong>403/580</strong> HP, <strong>168</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>17/39</strong> Charm(s) left</span><br>
+</div>
+<div class="index">85</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Guard Leadership]</a><br><span class="player">Gwalchmai</span>'s melee attacks are <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">86</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Burning Palm]</a><br><span class="player">Gwalchmai</span> takes <span class="magic">31 magic damage</span> <br><span class="special">Hathnuz</span> defends his master, <span class="player">Sdo1982</span>'s <span class="armor">armor</span> remains at <span class="armor">17</span><br>
+</div>
+<div class="index">87</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Strategic Strike]</a><br><span class="player">Gwalchmai</span> takes <span class="melee">0 melee damage</span> (<span class="armor">49 absorbed</span>)<br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">100</span><br>Because of <span class="special">Poison</span>, <span class="player">Helen</span> takes <span class="melee">3 melee damage</span> (<span class="armor">5 absorbed, 3 pierced</span>)<br>
+</div>
+<div class="index">88</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Duelist Axe]</a><br><span class="player">Gwalchmai</span> takes <span class="melee">3 melee damage</span> (<span class="armor">104 absorbed, 3 pierced</span>)<br>
+</div>
+<div class="index">89</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card crare BV_system_file">[Blind Fury]</a><br><span class="player">Godfat</span>'s <span class="special">armor drops to 0</span><br><span class="player">Godfat</span>'s <span class="special">ward drops to 0</span><br><span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 45</span><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br>
+</div>
+<div class="index">90</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card ccraft BV_system_file">[Honor Mace]</a><br><span class="player">Helen</span> takes <span class="melee">0 melee damage</span> (<span class="armor">73 absorbed</span>)<br>
+</div>
+<div class="index">91</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Steel Legplates]</a><br><span class="player">Sdo1982</span>'s <span class="armor">armor</span> raises to <span class="armor">61</span><br><span class="special">Hathnuz</span> defends his master, <span class="player">Sdo1982</span>'s <span class="armor">armor</span> remains at <span class="armor">61</span><br>
+</div>
+<div class="index">92</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card ccraft BV_system_file">[White Sealing Orb]</a><br><span class="status">A photonic seal begins to form</span><br><span class="player">Sdo1982</span> <span class="special">heals 26 damage</span><br><span class="player">Helen</span> <span class="special">heals 26 damage</span><br><span class="player">Papaj42</span> <span class="special">heals 26 damage</span><br><span class="player">Godfat</span> <span class="special">heals 26 damage</span><br>
+</div>
+<div class="index">93</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Duelist Chest]</a><br><span class="player">Papaj42</span>'s <span class="armor">armor</span> raises to <span class="armor">76</span><br>
+</div>
+<div class="index">94</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card ctreasure BV_system_file">[Linking Ice]</a><br><span class="player">Gwalchmai</span> takes <span class="magic">20 magic damage</span> <br>There is only one enemy to target<br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br><br><span class="status"> ** Battle status ** </span><br><span class="status">Sdo1982 : <strong>65/296</strong> HP, <strong>61</strong> Armor, <strong>17</strong> Ward, <strong>0</strong> Willpower, <strong>18/31</strong> Charm(s) left</span><br><span class="status">Helen : <strong>230/555</strong> HP, <strong>19</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>28/41</strong> Charm(s) left</span><br><span class="status">Papaj42 : <strong>259/374</strong> HP, <strong>76</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>20/34</strong> Charm(s) left</span><br><span class="status">Godfat : <strong>163/433</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>25/41</strong> Charm(s) left</span><br>------<br><span class="status">Gwalchmai : <strong>349/580</strong> HP, <strong>12</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>15/39</strong> Charm(s) left</span><br>
+</div>
+<div class="index">95</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Guard Strategic Strike]</a><br><span class="player">Sdo1982</span> takes <span class="melee">0 melee damage</span> (<span class="armor">55 absorbed</span>)<br><span class="player">Gwalchmai</span>'s <span class="armor">armor</span> raises to <span class="armor">63</span><br>
+</div>
+<div class="index">96</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Rock Palm]</a><br><span class="player">Gwalchmai</span> takes <span class="magic">24 magic damage</span> <br><span class="player">Gwalchmai</span> takes <span class="melee">0 melee damage</span> (<span class="armor">29 absorbed</span>)<br>
+</div>
+<div class="index">97</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Strategic Strike]</a><br><span class="player">Gwalchmai</span> takes <span class="melee">15 melee damage</span> (<span class="armor">34 absorbed</span>)<br><span class="player">Helen</span>'s <span class="armor">armor</span> raises to <span class="armor">70</span><br>
+</div>
+<div class="index">98</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card cclass BV_system_file">[Fighter's War Axe]</a><br><span class="player">Gwalchmai</span>'s <span class="special">armor drops to 0</span><br><span class="player">Gwalchmai</span> takes <span class="melee">50 melee damage</span> <br>
+</div>
+<div class="index">99</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card ccraft BV_system_file">[Fury Potion]</a><br><span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 47</span><br><span class="player">Godfat</span> is affected by <span class="special">fury potion</span><br><span class="special">Meditation</span> takes effect, <span class="player">Godfat</span>'s next melee attack is <span class="special">increased by up to 7</span><br><span class="special">Fury potion</span> takes effect, <span class="player">Godfat</span> <span class="special">loses 3 life</span><br>
+</div>
+<div class="index">100</div>
+<div class="turn">
+<span class="player">Gwalchmai</span> uses <a class="card cclass BV_system_file">[Guard War Hammer]</a><br><span class="player">Godfat</span> takes <span class="melee">57 melee damage</span> <br><span class="player">Godfat</span> takes <span class="melee">0 melee damage</span> <br>
+</div>
+<div class="index">101</div>
+<div class="turn">
+<span class="player">Sdo1982</span> uses <a class="card cvendor BV_system_file">[Steel Axe]</a><br><span class="player">Gwalchmai</span> takes <span class="melee">50 melee damage</span> <br>
+</div>
+<div class="index">102</div>
+<div class="turn">
+<span class="player">Helen</span> uses <a class="card cclass BV_system_file">[Guard Battle Cry]</a><br><span class="player">Sdo1982</span>'s melee attacks are <span class="special">increased by up to 8</span><br><span class="player">Helen</span>'s melee attacks are <span class="special">increased by up to 8</span><br><span class="player">Papaj42</span>'s melee attacks are <span class="special">increased by up to 8</span><br><span class="player">Godfat</span>'s melee attacks are <span class="special">increased by up to 8</span><br>
+</div>
+<div class="index">103</div>
+<div class="turn">
+<span class="player">Papaj42</span> uses <a class="card ccraft BV_system_file">[Duelist Axe]</a><br><span class="player">Gwalchmai</span> takes <span class="melee">70 melee damage</span> <br>
+</div>
+<div class="index">104</div>
+<div class="turn">
+<span class="player">Godfat</span> uses <a class="card cclass BV_system_file">[Novice's Hidden Blades]</a><br><span class="player">Gwalchmai</span> takes <span class="melee">174 melee damage</span> <br><span class="player">Godfat</span> gains <span class="special">meditation</span><br><br><span class="status"> <strong>Gwalchmai</strong> is defeated. </span><br><br><br><span class="status"> ** Battle status ** </span><br><span class="status">Sdo1982 : <strong>65/296</strong> HP, <strong>6</strong> Armor, <strong>17</strong> Ward, <strong>0</strong> Willpower, <strong>16/31</strong> Charm(s) left</span><br><span class="status">Helen : <strong>230/555</strong> HP, <strong>70</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>26/41</strong> Charm(s) left</span><br><span class="status">Papaj42 : <strong>259/374</strong> HP, <strong>76</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>18/34</strong> Charm(s) left</span><br><span class="status">Godfat : <strong>103/433</strong> HP, <strong>0</strong> Armor, <strong>0</strong> Ward, <strong>0</strong> Willpower, <strong>23/41</strong> Charm(s) left</span><br>
+</div>
+<div class="index">*</div>
+<div class="turn"></div>
+</div>
+</div>
+<div id="VsRedirect" class="section_text" style="">
+<div class="section_text">After the battle replay, you can</div>
+<div class="decision button button_c3">
+<a class="button_inner button_ic3">Go Back to Report</a>
+</div>
+<div class="decision button button_c5">
+<a class="button_inner button_ic5">Go to Your Guild</a>
+</div>
+<div class="decision button button_c5">
+<a class="button_inner button_ic5">View Your Character</a>
+</div>
+</div>
+</body>
+</html>
