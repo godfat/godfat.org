@@ -5,6 +5,8 @@
     <meta property="og:title" expr:content='data:blog.pageName'/>
     <meta property="og:site_name" expr:content='data:blog.title'/>
     <meta property="og:image" content="http://profile.godfat.org/image/spiritual_soul.jpg"/>
+    <meta property="fb:admins" content="1072460044"/>
+    <meta property="fb:app_id" content="122929524388492"/>
 
     <b:include data='blog' name='all-head-content'/>
     <link rel='icon' type='image/png' href='http://godfat.org/image/favicon.png'/>
