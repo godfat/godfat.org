@@ -5,6 +5,12 @@
     <meta property="og:title" expr:content='data:blog.pageName'/>
     <meta property="og:site_name" expr:content='data:blog.title'/>
     <meta property="og:image" content="http://profile.godfat.org/image/spiritual_soul.jpg"/>
+    <b:if cond='data:blog.pageType == "item"'>
+      <meta property="og:type" content="article"/>
+    <b:else/>
+      <meta property="og:type" content="blog"/>
+    </b:if>
+    <meta property="og:url" expr:content='data:blog.url'/>
     <meta property="fb:admins" content="1072460044"/>
     <meta property="fb:app_id" content="122929524388492"/>
 
