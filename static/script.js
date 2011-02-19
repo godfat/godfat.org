@@ -9,7 +9,7 @@ var items = ['#links', '#projects', '#slides', '#research',
              '#programming-languages', '#time-graphs',
              '#interests', '#favors', '#games', '#comic',
              '#composers', '#singers', '#music',
-             '#books', '#misc', '#headphone']
+             '#books', '#misc', '#headphone', '#computer']
 
 jQuery.each(
   code.concat(news).concat(items),
