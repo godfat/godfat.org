@@ -94,7 +94,25 @@ body{
   margin:0;
   color: $textcolor;
   text-align: center;
-  font-family: "DejaVu Sans", "Bitstream Vera Sans", "Lucida Grande", "Arial", "儷黑 Pro", "LiHei Pro", sans-serif;
+  font-family: "DejaVu Sans", "Bitstream Vera Sans", "Lucida Grande", "Arial", "Hiragino Maru Gothic Pro", sans-serif;
+}
+code, pre{
+  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Consolas", "Lucida Console", "Courier New", monospace;
+  font-size: 1em;
+  overflow: auto;
+  max-width: 850px;
+}
+code{
+  background-color: #191970;
+}
+pre code{
+  background-color: #181829;
+}
+pre{
+  /* #483D8B; dark slate blue */
+  /* #191970; midnight blue */
+  background-color: #181829;
+  padding: 1em 0 1em 1em;
 }
 a:link{
   color: $linkcolor;
@@ -366,14 +384,6 @@ h2.date-header{
 body#layout #header {
   margin-left: 0px;
   margin-right: 0px;
-}
-
-pre{
-  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Consolas", "Lucida Console", "Courier New", monospace;
-  padding: 1em 0 1em 0em;
-  font-size: 1em;
-  overflow: auto;
-  max-width: 850px;
 }
 
 /* pygments highlighting */
