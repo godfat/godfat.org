@@ -80,7 +80,13 @@ refer: http://blogger.godfat.org/
   letter-spacing: 0.1em;
   line-height: 150%
 }
-
+del{
+  text-decoration: line-through;
+  color: red;
+}
+del span{
+  color: $textcolor;
+}
 blockquote{
   background-color: #222;
   padding: 0.7em;
