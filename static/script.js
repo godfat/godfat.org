@@ -14,7 +14,9 @@ var items = ['#links', '#projects', '#slides', '#research',
 jQuery.each(
   code.concat(news).concat(items),
   function(i, v){
-    $(v).hide();
+    if(v !== '#links'){
+      $(v).hide();
+    }
     $(v + '-toggle').click( function(){ $(v).toggle(); } );
   });
 
