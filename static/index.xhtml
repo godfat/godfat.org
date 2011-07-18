@@ -6,494 +6,53 @@
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
     <link rel="icon" type="image/png" href="image/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Raleway:100&amp;v2' rel='stylesheet' type='text/css'/>
     <title>飽和脂肪星</title>
   </head>
 
   <body>
 
-    <h1 id="header">godfat.org</h1>
-    <blockquote>
-      <p>
-        By Mutants, For Mutants － Black Isle
-      </p>
-    </blockquote>
-
-    <pre class="twilight"><span class="Comment">#!/usr/bin/env ruby</span>
-<span class="Comment"># encoding: utf-8
-
-# <a href="http://rubyquiz.strd6.com/quizzes/158">Ruby Quiz #158</a></span>
-
-%w[ <span class="String">Class &lt;&lt;self Symbol</span> ].reverse.each{ |<span class="Variable">klass</span>|
-  <span class="Comment toggler" id="d18-toggle"># dirty 1.8 compatibility</span>
-  <span id="d18"><span class="Keyword">def</span> <span class="Entity">public_send</span> <span class="Keyword">*</span>args
-    <span class="Storage">respond_to?</span>(args.first) <span class="Keyword">&amp;&amp;</span> send(<span class="Keyword">*</span>args)
-  <span class="Keyword">end</span> <span class="Keyword">unless</span> <span class="Storage">respond_to?</span>(<span class="Constant">:public_send</span>)</span>
-  <span class="Comment toggler" id="f18-toggle"># full 1.8 compatibility</span>
-  <span id="f18"><span class="Keyword">def</span> <span class="Entity">public_send</span> <span class="Keyword">*</span>args
-    <span class="Keyword">if</span> <span class="Storage">respond_to?</span>(args.first)
-      send(<span class="Keyword">*</span>args)
-    <span class="Keyword">else</span>
-      msg <span class="Keyword">=</span> <span class="String">" `</span><span class="StringEmbeddedSource">\#</span><span class="String">{</span><span class="StringVariable">args.first</span><span class="String">}' called for </span><span class="StringEmbeddedSource">\#</span><span class="String">{</span><span class="StringVariable">inspect</span><span class="String">}:</span><span class="StringEmbeddedSource">\#</span><span class="String">{</span><span class="StringVariable">self.class</span><span class="String">}"</span>
-      <span class="Keyword">if</span> <span class="Storage">respond_to?</span>(args.first, true)
-        <span class="Keyword">raise</span> <span class="Support">NoMethodError</span>.<span class="Keyword">new</span>(  <span class="String">'private method'</span> <span class="Keyword">+</span> msg)
-      <span class="Keyword">else</span>
-        <span class="Keyword">raise</span> <span class="Support">NoMethodError</span>.<span class="Keyword">new</span>(<span class="String">'undefined method'</span> <span class="Keyword">+</span> msg)
-      <span class="Keyword">end</span>
-    end
-  <span class="Keyword">end if</span> <span class="Variable">RUBY_VERSION</span> <span class="Keyword">&lt;</span> <span class="String">'1.9.0'</span></span>
-  <span class="Comment toggler" id="rbx-jruby-toggle"># rubinius, jruby compatibility</span>
-  <span id="rbx-jruby"><span class="Keyword">def</span> <span class="Entity">to_proc</span>
-    msg <span class="Keyword">=</span> <span class="Variable">self</span>
-    lambda{ |<span class="Keyword">*</span><span class="Variable">args</span>| args.shift.public_send(msg, <span class="Keyword">*</span>args) }
-  <span class="Keyword">end</span></span>
-  eval <span class="String">&lt;&lt;-RUBY</span>.split(<span class="StringRegexp">/真常/</span>).join
-    <span class="Keyword">class</span> <span class="StringEmbeddedSource">#{klass}</span>
-      <span class="String">真常</span> define_method(<span class="Constant">:method_missing</span>, <span class="Keyword">&amp;</span><span class="Constant">:say</span>)
-    <span class="Keyword">end</span>
-<span class="String">  RUBY</span>
-}
-<span class="Support">Class</span>.send(<span class="Constant">:define_method</span>, <span class="Constant">:const_missing</span>,
-  <span class="Keyword">&amp;</span>lambda{ |<span class="Variable">c</span>| cry c.to_s[<span class="Constant">0</span>..<span class="Keyword">-</span><span class="Constant">2</span>] })
-<span class="Keyword">def</span> <span class="Entity">say</span> s <span class="Keyword">=</span> <span class="Constant">nil</span>
-  print s, <span class="String">'</span> <span class="String">'</span> <span class="Keyword">if</span> s
-  <span class="Variable">self</span>
-<span class="Keyword">end</span>
-<span class="Keyword">public</span> <span class="Constant">:say</span>
-sing <span class="Support">Hello</span>.<span class="Variable">World!</span>
-puts
-<span class="String">__END__</span>
-Apache License 2.0
-</pre>
-
-    <div class="block">
-      <!--
-      i have 6 more:<br/>
-      more hardcore than casual player;<br/>
-      more causal than hardcore player.<br/>
-      more scientific than engineer;<br/>
-      more engineering than scientist.<br/>
-      more stupid than genius;<br/>
-      more intelligent than average.<br/>
-      in other words, i have 6 less.<br/>
-      <br/>
-      -->
-      i was a half <em>gamer</em>, a half <em>programmer</em>, a half <em>computer scientist</em>,<br/>
+    <h1>godfat.org</h1>
+    <div>
+      I was a half <em>gamer</em>, a half <em>programmer</em>, a half <em>computer scientist</em>,<br/>
       and a half <em>etc</em>, and never was a full <em>something</em>.
     </div>
 
     <hr/>
-<!--
-    <h1>news:</h1>
-    <div id="news">
-      <span class="toggler" id="news-2010-02-22-toggle">2010-02-22</span>
-      <div id="news-2010-02-22">
-        2010-02-22<br/>
-        <ul>
-          <li>added an interests column</li>
-          <li>added slide link to Ruby Tuesday</li>
-        </ul>
-      </div>
 
-      <span class="toggler" id="news-2009-11-21-toggle">2009-11-21</span>
-      <div id="news-2009-11-21">
-        2009-10-08<br/>
-        <ul><li>added a research column</li></ul>
-      </div>
-
-      <span class="toggler" id="news-2009-10-08-toggle">2009-10-08</span>
-      <div id="news-2009-10-08">
-        2009-10-08<br/>
-        <ul>
-          <li>added a frame and a time-graph about me.</li>
-          <li>defaults to hide everything.</li>
-          <li>renamed `others' to `favors', and added more things.</li>
-        </ul>
-      </div>
-
-      <span class="toggler" id="news-2009-09-05-toggle">2009-09-05</span>
-      <div id="news-2009-09-05">
-        2009-09-05<br/>
-        Yet another migration. I've moved this page from godfat.github.com to<br/>
-        google appengine on 2009-09-02, because github didn't update my page<br/>
-        in days, i don't know if it would be going to happen.<br/>
-        <br/>
-        Additionally, this migration fixed the slides on github,<br/>
-        you can download them once again. I'll provide a list once<br/>
-        i've come up a good way to show this slide list.<br/>
-        I used to use autoindex on nginx, but it seems that google<br/>
-        appengine didn't provide an equivalent in a glimpse.<br/>
-        <br/>
-        And <a href="http://github.com/godfat/godfat.org">sources</a> are moved to godfat.org back.<br/>
-        <br/>
-        又搬家了。2009-09-02 時我把網站從 godfat.github.com 搬到<br/>
-        google appengine 上了。因為 github 好幾天沒更新我的網頁，<br/>
-        而我也不知道再繼續等下去是否會更新。<br/>
-        <br/>
-        另一方面，搬家後原本不能下載的投影片，現在又能下載了。<br/>
-        等我想到要怎麼列出投影片清單時，我會放一份清單出來。<br/>
-        原本是用 nginx 的 autoindex, 但 google appengine<br/>
-        好像沒有這種東西，我可能要自己處理一份。<br/>
-        <br/>
-        <a href="http://github.com/godfat/godfat.org">原始檔</a>也搬回 godfat.org 了。
-      </div>
-
-      <span class="toggler" id="news-2009-06-09-toggle">2009-06-09</span>
-      <div id="news-2009-06-09">
-        2009-06-09<br/>
-        I've stopped server on slicehost a while ago, so redirect godfat.org to<br/>
-        godfat.github.com for now. Since I got to reduce some extra cost...
-      </div>
-
-      <span class="toggler" id="news-2008-12-17-toggle">2008-12-17</span>
-      <div id="news-2008-12-17">
-        2008-12-17<br/>
-        host this site at <a href="http://godfat.github.com/">github</a> as well.<br/>
-        source code moved from <a href="http://github.com/godfat/godfat.org">godfat.org</a>
-        to <a href="http://github.com/godfat/godfat.github.com">godfat.github.com</a> for convenience.
-      </div>
-
-      <span class="toggler" id="news-2008-12-12-toggle">2008-12-12</span>
-      <div id="news-2008-12-12">
-        2008-12-12<br/>
-        website renewal, this page was put to github.
-        <a href="http://github.com/godfat/godfat.org">soruce code</a><br/>
-        i would list anything i involed here. you can contact me via
-        <a href="http://github.com/godfat">github</a>.
-      </div>
-
-      <span class="toggler" id="news-2007-08-23-toggle">2007-08-23</span>
-      <div id="news-2007-08-23">
-        2007.08.23<br/>
-        [公告] <del>godfat.idv.tw</del> 將慢慢捨棄，也不建議使用 <del>godfat.tw</del>,<br/>
-        可設定的東西也不夠多，以後將完全使用 <strong><em>godfat.org</em></strong>
-      </div>
-    </div>
-
-    <hr/>
-!-->
-    <ul id="menu">
-      <li class="toggler" onclick="collapse_all()">collapse</li>
-      <li class="toggler" onclick="fold_all()">fold</li>
-    </ul>
-
-    <h1 class="toggler" id="links-toggle">links:</h1>
-    <div class="block" id="links">
-      <h2>profile</h2>
+    <h2>Links:</h2>
+    <div>
+      <h3>profile</h3>
       <ul>
         <li>
           <a href="http://godfat.org/">飽和脂肪星</a>
-          － planet of saturated fat
+          (planet of saturated fat)
         </li>
       </ul>
-      <h2>blog</h2>
+      <h3>blog</h3>
       <ul>
         <li>
           <a href="http://blogger.godfat.org/">星之一角</a>
-          － a corner of the planet
+          (a corner of the planet)
         </li>
       </ul>
-      <h2>microblog</h2>
+      <h3>microblog</h3>
       <ul>
-        <li><a href="https://github.com/godfat">github</a> (ok, this is not a microblog)</li>
+        <li><a href="https://github.com/godfa">github</a> (ok, this is not a microblog)</li>
         <li><a href="https://profiles.google.com/godfat/buzz">buzz</a></li>
         <li><a href="https://twitter.com/godfat">twitter</a></li>
         <li><a href="https://www.facebook.com/spellbook">facebook</a></li>
       </ul>
-<!--
-        <li>
-          <a href="http://flolac.iis.sinica.edu.tw/lambdawan/">嵐達網</a>
-          － 程式語言同好的中文社群網站
-        </li>
-        <li>
-          <a href="http://phpbb.godfat.org/">飽和脂肪星</a>
-        </li>
-        <li>
-          <a href="https://redmine.godfat.org/">紅雷</a>
-          － red lightning
-        </li>
-        <li>星之水餃 - beast</li>
-        <li>星之肉腳 - moin moin</li>
--->
+
     </div>
 
-    <h1 class="toggler" id="projects-toggle">projects:</h1>
-    <div class="block" id="projects">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <h2>C++ 98</h2>
+    <h2>Time-graphs:</h2>
+    <div>
       <ul>
-        <li>
-          <a href="http://github.com/godfat/cubeat">CuBeat</a>
-          － a puyopuyo-like game (actually looks more like Panel de Pon, Meteos and Lumines).
-        </li>
-      </ul>
-
-      <h2>ActionScript 3</h2>
-      <ul>
-        <li>
-          <a href="http://github.com/godfat/avatarblock">avatarblock</a>
-          － as3 avatar block animation
-        </li>
-      </ul>
-
-      <h2>Scala 2.8</h2>
-      <ul>
-        <li>
-          <a href="http://github.com/godfat/spellbook">spellbook 魔法書</a>
-          － this is an experiment to the models of spellbook
-        </li>
-      </ul>
-
-      <h2>Ruby</h2>
-      <ul>
-        <li>
-          <a href="http://github.com/cardinalblue/rest-graph">rest-graph</a>
-          － A lightweight Facebook Graph API client
-          <blockquote><p>&gt; gem install rest-graph</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/cardinalblue/rest-core">rest-core</a> (rework of rest-graph)
-          － A modular and lightweight Ruby REST client infrastructure and implementations
-          <blockquote><p>&gt; gem install rest-core</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/godfat/ripl-rc">ripl-rc</a>
-          － ripl plugins collection, take you want, leave you don't.
-          <blockquote><p>&gt; gem install ripl-rc</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/cardinalblue/cerealize">cerealize</a>
-          － Serialize out of the Cerealize Box<br/>
-          - a drop-in replacement for ActiveRecord's serialize
-          <blockquote><p>&gt; gem install cerealize</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/godfat/pagify">pagify</a>
-          － Pagination tools for Array(or custom class), DataMapper and ActiveRecord
-          <blockquote><p>&gt; gem install pagify</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/godfat/friendly_format">friendly_format</a>
-          － make user input be valid xhtml and format it with gsub("\n", "&lt;br/&gt;") etc.
-          <blockquote><p>&gt; gem install friendly_format</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/godfat/dm-is-reflective">dm-is-reflective</a>
-          － DataMapper plugin that helps you manipulate an existing database.
-          <blockquote><p>&gt; gem install dm-is-reflective</p></blockquote>
-        </li>
-<!--
-        <li>
-          <a href="http://github.com/godfat/source-tools">source-tools</a>
-          － source code tools collection
-          <blockquote><p>&gt; gem install source-tools</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/godfat/app-deploy">app-deploy</a>
-          － rake tasks for deployment
-          <blockquote><p>&gt; gem install app-deploy</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/godfat/thumbo">thumbo</a>
-          － create thumbnails via RMagick
-          <blockquote><p>&gt; gem install thumbo</p></blockquote>
-        </li>
-
-        <li>
-          <a href="http://github.com/godfat/ludy">ludy</a>
-          － some collections
-          <blockquote><p>&gt; gem install ludy</p></blockquote>
-        </li>
--->
-      </ul>
-    </div>
-
-    <h1 class="toggler" id="slides-toggle">slides:</h1>
-    <div class="block" id="slides">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <ul>
-        <li>2010-04-24 <a href="slide/2010-04-24-cerealize.pdf">Serialize out of the Cerealize Box</a> - a drop-in replacement for ActiveRecord</li>
-        <li>2010-04-13 <a href="slide/2010-04-13-reactor-pattern-and-2.pdf">Reactor Pattern &amp; Event-Driven Programming 2</a></li>
-        <li>2010-02-09 <a href="slide/2010-02-09-reactor-pattern-and.pdf">Reactor Pattern &amp; Event-Driven Programming</a></li>
-        <li>2008-12-21 <a href="slide/2008-12-21-rubinius.pdf">Rubinius</a></li>
-        <li>2008-01-25 <a href="slide/2008-01-25-tangible_value.pdf">Tangible Value</a></li>
-        <li>2007-06-24 <a href="slide/2007-06-24-the_lost_piece.pdf">The Lost Piece</a></li>
-      </ul>
-    </div>
-
-    <h1 class="toggler" id="research-toggle">research:</h1>
-    <div class="block" id="research">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <ul>
-        <li>programming language theory (type system, functional programming, etc)</li>
-        <li>software development (source code management, unit testing, object-orient programming, etc)</li>
-        <li>website development (css, jquery, rack, ramaze, deployment, etc)</li>
-        <li>modular/library/framework design/implement</li>
-        <li>game design/development</li>
-      </ul>
-    </div>
-
-    <h1 class="toggler" id="programming-languages-toggle">programming languages:</h1>
-    <div class="block" id="programming-languages">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <ul>
-        <li>Ruby 1.8/1.9</li>
-        <li>ISO C++ 98/03</li>
-        <li>ActionScript 2.0/3.0</li>
-        <li>Haskell 98 (studying)</li>
-        <li>Scala 2.8 (studying)</li>
-      </ul>
-    </div>
-
-    <h1 class="toggler" id="time-graphs-toggle">time-graphs:</h1>
-    <div class="block" id="time-graphs">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <ul>
-        <li>2009-12 ~ 2010-07: iis.sinica 中研院資科所</li>
-        <li>2009-11 ~ present: cardinalblue.com</li>
-        <li>2007-07 ~ 2010-08: roodo.com 樂多</li>
-        <li>2007-03 ~ 2009-02: iis.sinica 中研院資科所</li>
-        <li>2004-09 ~ 2008-08: infocom.yzu 元智資訊傳播－互動科技組</li>
-        <li>2001-09 ~ 2004-06: 師大附中</li>
-        <li>1998-09 ~ 2001-06: 和平高中國中部</li>
-        <li>1992-09 ~ 1998-06: 北師實小</li>
-        <li>?? ~ ??: ??</li>
-        <li>?? ~ ??: ??</li>
-        <li>?? ~ ??: ??</li>
-        <li>1985-09 ~ present: Taiwan 台灣</li>
-      </ul>
-    </div>
-
-    <h1 class="toggler" id="interests-toggle">interests:</h1>
-    <div class="block" id="interests">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <ul>
-        <li>game (遊戲)</li>
-        <li>music (音樂)</li>
-        <li>programming (寫程式)</li>
-        <li>reading/learning (閱讀/學習)</li>
-      </ul>
-    </div>
-
-    <h1 class="toggler" id="favors-toggle">favors:</h1>
-    <div class="block" id="favors">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <h2 class="toggler" id="comic-toggle">anime/comic:</h2>
-      <div class="block" id="comic">
-        <ul>
-          <li>魔法陣グルグル</li>
-          <li>攻殻機動隊</li>
-          <li>蟲師</li>
-          <li>電脳コイル</li>
-          <li>ナツノクモ</li>
-          <li>ヒカルの碁</li>
-          <li>風の谷のナウシカ (comic)</li>
-        </ul>
-      </div>
-
-      <h2 class="toggler" id="games-toggle">games:</h2>
-      <div class="block" id="games">
-        <ul>
-          <li><a href="http://en.wikipedia.org/wiki/Magic:_The_Gathering">Magic: the Gathering</a></li>
-          <li>Spiritual Soul (精靈幻境)</li>
-          <li>Chrono Trigger</li>
-          <li>阿貓阿狗</li>
-          <li>StarCraft</li>
-          <li>Fallout 2</li>
-          <li><a href="http://en.wikipedia.org/wiki/Sacrifice_%28video_game%29">Sacrifice</a></li>
-          <li><a href="http://www.falcom.com/vmj/">VM Japan</a></li>
-          <li>Guild Wars</li>
-          <li><a href="http://ja.wikipedia.org/wiki/大神_%28ゲーム%29">大神</a></li>
-        </ul>
-      </div>
-
-      <h2 class="toggler" id="composers-toggle">composers:</h2>
-      <div class="block" id="composers">
-        <ul>
-          <li>光田康典</li>
-          <li>梶浦由記</li>
-          <li>Revo</li>
-          <li>志方あきこ</li>
-        </ul>
-      </div>
-
-      <h2 class="toggler" id="singers-toggle">singers:</h2>
-      <div class="block" id="singers">
-        <ul>
-          <li>みとせのりこ</li>
-          <li>志方あきこ</li>
-          <li>茶太</li>
-        </ul>
-      </div>
-
-      <h2 class="toggler" id="music-toggle">music:</h2>
-      <div class="block" id="music">
-        <ul>
-          <li>Chrono Cross</li>
-          <li>.hack//SIGN</li>
-          <li>魔界戦記 Disgaea Arrange Soundtrack</li>
-          <li>Elysion ～楽園幻想物語組曲～</li>
-          <li>RAKA</li>
-          <li>Ar tonelico</li>
-          <li>Pure-AQUAPLUS LEGEND OF ACOUSTICS-</li>
-          <li>うみねこのなく頃に (志方あきこ)</li>
-        </ul>
-      </div>
-
-      <h2 class="toggler" id="books-toggle">books:</h2>
-      <div class="block" id="books">
-        <ul>
-          <li>The Language Instinct 語言本能</li>
-          <li>The Enchanted World of Sleep 睡眠的迷人世界</li>
-          <li>On Intelligence 創智慧</li>
-          <li>Dragon Raja 龍族</li>
-        </ul>
-      </div>
-
-      <h2 class="toggler" id="misc-toggle">misc:</h2>
-      <div class="block" id="misc">
-        <ul>
-          <li>Arch Linux</li>
-          <li>fish shell</li>
-          <li>Git</li>
-          <li>nginx HTTP server</li>
-          <li>Bitstream Vera Sans (Mono)</li>
-          <li>Apache License</li>
-        </ul>
-      </div>
-    </div>
-
-    <h1 class="toggler" id="computer-toggle">computer systems:</h1>
-    <div class="block" id="computer">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <ul>
-        <li>2010-05: MacBook Pro 15" i5 2.4GHz, GeForce GT 330M, 8G RAM</li>
-        <li>2007-07: MacBook 13" Core2 Dual 2.13GHz, 3G RAM</li>
-        <li>2005: 仁寶 CL56 15" PentiumM 1.6GHz, ATi 9700M, 1G RAM</li>
-        <li>custom desktop Pentium4 2.8GHz, ATi 9600pro, 1G RAM</li>
-        <li>forgotten stories (386, 486, Pentium, etc)</li>
-      </ul>
-    </div>
-
-    <h1 class="toggler" id="headphone-toggle">headphone systems:</h1>
-    <div class="block" id="headphone">
-      <a class="toggler" onclick="fold_all()">△ Back</a>
-      <ul>
-        <li>CEC TL51-XR</li>
-        <li>Apple MacBook Pro</li>
-        <li>Echo Audiofire 2</li>
-        <li>Meier Audio Corda Symphony</li>
-        <li>Etymotic Research ER4S</li>
-        <li>Alessandro Music Series Pro</li>
-        <li>beyerdynamic DT48E</li>
-        <li>Sennheiser HD800</li>
+        <li><span class="date">2009-12~2010-07:</span> iis.sinica 中研院資科所</li>
+        <li><span class="date">2009-11~present:</span> cardinalblue.com</li>
+        <li><span class="date">2007-07~2010-08:</span> roodo.com 樂多</li>
+        <li><span class="date">2007-03~2009-02:</span> iis.sinica 中研院資科所</li>
       </ul>
     </div>
 
@@ -521,10 +80,9 @@ Apache License 2.0
         <img style="width: 88px; height: 31px;"
              src="image/vcss-blue.gif"
              alt="Valid CSS!"/></a>
-    </div>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"/>
-    <script type="text/javascript" src="script.js"/>
+      (<a href="index1.xhtml">old index</a>)
+    </div>
 
     <script type="text/javascript" src="http://www.google-analytics.com/ga.js"/>
     <script type="text/javascript">
