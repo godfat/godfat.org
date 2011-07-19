@@ -24,9 +24,7 @@ hr{
 }
 div{
   margin: 1em;
-}
-br{
-  margin: 0.15em;
+  line-height: 1.4em;
 }
 li{
   margin: 0.15em;
