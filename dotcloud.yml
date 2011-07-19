@@ -1,6 +1,3 @@
 www:
-  config:
-    path: static
-  instances: 1
   type: static
-  url: http://www.godfat.org/
+  approot: static
