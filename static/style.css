@@ -49,6 +49,9 @@ a:visited{
   font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans',
                'Monaco', 'Consolas', 'Lucida Console', monospace;
 }
+.desc{
+  font-size: 0.9em;
+}
 .date{
   padding-right: 1em;
   color: #666;
