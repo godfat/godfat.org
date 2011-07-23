@@ -45,11 +45,13 @@ a:visited{
   color: navy;
   text-decoration: none;
 }
+.proj, .date{
+  font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans',
+               'Monaco', 'Consolas', 'Lucida Console', monospace;
+}
 .date{
   padding-right: 1em;
   color: #666;
-  font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans',
-               'Monaco', 'Consolas', 'Lucida Console', monospace;
 }
 #sig{
   text-align: right;
