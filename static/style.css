@@ -46,7 +46,7 @@ a:visited{
   text-decoration: none;
 }
 .proj, .date{
-  font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans',
+  font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
                'Monaco', 'Consolas', 'Lucida Console', monospace;
 }
 .desc{
