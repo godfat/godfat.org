@@ -45,16 +45,50 @@ require 'rake'
 gem 'rake',  '0.9.2'
 </code></pre>
 <p>不過由於 Rails 的版本控制有點混亂且複雜，單這樣寫往往還會有其他版本問題。也因此他們才特地開發了 <a href="https://github.com/carlhuda/bundler">Bundler</a> 來協助 Rails 3 管理這一團混亂。由於這超出本篇範圍，這裡就不多討論。</p>
-<h2 id="gem-source">gem source</h2>
-<h2 id="user-gem--gem-path">user gem 與 gem path</h2>
-<h2 id="section-3">簡單易用下的複雜性</h2>
+<h2 id="gemrc">~/.gemrc</h2>
+<p>就像 vim 有 ~/.vimrc，RubyGems 也有 ~/.gemrc，可以調整一些執行 gem 命令時的預設行為。一個常見的用法是在裡面加一行關閉 rdoc 和 ri：</p>
+<pre><code>gem: --no-rdoc --no-ri
+</code></pre>
+<p>因為安裝 gems，如果還要產生 rdoc 和 ri，其實是很花時間的一件事。而大部份的人，恐怕不會在自己的電腦上面看 rdoc 甚至 ri，而是打開瀏覽器直接搜尋網路。有人建議乾脆把這兩個選項設成預設的，不過被拒絕了。原因是，還是讓新手可以在自己電腦上查詢文件吧！真的不想要的人再關掉就好了。</p>
+<p>而我個人的 ~/.gemrc 還多設了兩個選項。裡面是這一行：</p>
+<pre><code>gem: --user --env-shebang --no-rdoc --no-ri
+</code></pre>
+<p>其中第一個 <code>--user</code> 的意思是優先使用屬於使用者個人的 gems，而非系統的。也因此，我在執行 <code>gem install</code> 時是不需要 <code>sudo</code>，因為 gems 是安裝至~/.gem 底下，而非系統的路徑。我個人比較喜歡用這種方式管理我安裝的 gems，這樣就不會受到系統的影響，自己要修改 gems 來除錯時，也不會影響到其他人。</p>
+<p>第二個 <code>--env-shebang</code> 的意思則是，比方說 rake 這個 gem 有個 <code>rake</code> 的命令，這個程式本身是一個 Ruby 程式，因此也會有個 shebang。預設的行為下，這 shebang 會指向當時所使用的 Ruby 的完整路徑。這個問題是，Mac 的 <a href="https://github.com/mxcl/homebrew">Homebrew</a> 在每次更新 Ruby 時，完整路徑都會改變，因為路徑本身是含有版本資訊的。我不希望每次更新 Ruby，我就要重新更新 shebang，不如就直接用 <code>#!/usr/bin/env ruby</code> 吧！</p>
+<p>除此之外，還可以設非常多的設定。一些比較針對特定命令的，可以看特定命令的 help。比較無關某個命令的，則可以看 <code>gem help environment</code>。</p>
+<!--
+## 架設自己的 RubyGems 儲藏室
+
+原本所有的 RubyGems 套件，也就是 gems 都是放在 [RubyForge][]。不過 RubyForge 
+後來的運作狀況不是很好，使用者太多，速度變得很慢。再加上使用上不是很方便，
+步驟很多也不容易記得。後來 [qrush][] 因此用 Rails 開發了 GemCutter，目的是
+取代 RubyForge 許許多多功能中的其中一個，也就是放置儲存 gems 的功能。同時，
+它也是放置在 Github 的開源專案。
+
+後來 GemCutter 非常成功，不只把所有原本放在 RubyForge 的 gems 都複製到 
+GemCutter，原開發者也可以輕易取得自己的 gems 散佈權。最終所有的東西就全部
+合併進 RubyGems，同時正式把預設的伺服器從 RubyForge.org 改到 RubyGems.org。
+整個轉換過程非常地順利，沒有在開發自己的 gems 的人，可能甚至不會注意到
+改變，也不知道曾經存在過 GemCutter，只知道速度變快了。
+
+也因為整個計畫都是開源的，RubyGems 本身也一直都支援 `gem source` 來管理所有的
+伺服器位置。因此任何人都可以架設自己的 RubyGems.org，在上面放私有不公開的
+gems，只允許自己的機器去存取。或許也可以用這種方式來佈署自己的私有軟體吧。
+
+詳細的架設方式，請參考 [RubyGems.org 的源碼][rubygems-source]。
+
+[RubyForge]: http://rubyforge.org/
+[qrush]: https://github.com/qrush
+[rubygems-source]: https://github.com/rubygems/rubygems.org
+--><h2 id="section-3">簡單易用下的複雜性</h2>
 <p>雖然個人沒用過太多套件管理系統，但 RubyGems 相較於其他個人用過同性質的軟體，可以說是最方便簡單，且功能強大的之一。不過世界上當然沒有可以滿足一切的軟體。 RubyGems 付出的代價是極為複雜的內部運作，使得執行效率變得不甚理想。</p>
 <p>如果在執行每個 Ruby 程式之前，先讀入 RubyGems，例如在程式的最前面寫上 <code>require 'rubygems'</code>，則程式的啟動效能會讓很多人無法接受。因此很多人發明了其他各種取代 RubyGems 的軟體。例如 <a href="https://github.com/defunkt/rip">rip</a> 和 <a href="https://github.com/mislav/coral">coral</a> 等等。他們做的事情很簡單，就是僅僅調整 <code>$LOAD_PATH</code> 而非像 RubyGems 還會處理版本相依的問體。</p>
 <p>Ruby 1.9 在把 RubyGems 納入核心時，甚至寫了一個叫 <em>gem_prelude</em> 的東西。可以把這東西想像成一種輕便的 RubyGems。這樣做的理由是，很多 Ruby 核心的開發者，並不願意付出啟動 RubyGems 所需要付出的運算成本。</p>
 <p>不幸的是，正因為 <em>gem_prelude</em> 不是完整的 RubyGems 實作，他並不會計算複雜的版本相依問題，因此在某些特定的情況下，會錯誤讀到非指定版本的 gem. 如果我們只用最新的 gem，或是電腦裡只安裝需要用到的 gem，則不會有這個問題。但如果同時安裝了許多版本，又指定了某些特定版本，<em>gem_prelude</em> 就有可能忽略到一些細節。</p>
 <p>這個問題對於 Rails 又特別嚴重，因為 Rails 常常會使用到各種套件的底層，使得 Rails 對於套件的版本相當地敏感，常常版本只差一點點就會有問題了。在 ruby-core mailing list 裡討論了非常久，一方認為正確性比較重要，而另一方則認為啟動速度比較重要。後來 RubyGems 經過幾次瘦身和最佳化，總算啟動得夠快了，核心開發者才同意拿掉 <em>gem_prelude</em>。因此現在已經不會有這個問題了。</p>
-<h2 id="section-4">鑄造你的紅寶石</h2>
-<h2 id="section-5">展望</h2>
+<!--
+## 鑄造你的紅寶石
+--><h2 id="section-4">展望</h2>
 <p>std gem</p>
 </body>
 </html>

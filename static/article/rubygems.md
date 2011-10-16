@@ -139,9 +139,64 @@ approximate operator, 也就是近似運算子，如果中文可以這樣翻的�
 [appr-op]: https://github.com/rubygems/rubygems/pull/124
 [Bundler]: https://github.com/carlhuda/bundler
 
-## gem source
+## ~/.gemrc
 
-## user gem 與 gem path
+就像 vim 有 ~/.vimrc，RubyGems 也有 ~/.gemrc，可以調整一些執行 gem 命令時的
+預設行為。一個常見的用法是在裡面加一行關閉 rdoc 和 ri：
+
+    gem: --no-rdoc --no-ri
+
+因為安裝 gems，如果還要產生 rdoc 和 ri，其實是很花時間的一件事。而大部份的人，
+恐怕不會在自己的電腦上面看 rdoc 甚至 ri，而是打開瀏覽器直接搜尋網路。有人建議
+乾脆把這兩個選項設成預設的，不過被拒絕了。原因是，還是讓新手可以在自己電腦上
+查詢文件吧！真的不想要的人再關掉就好了。
+
+而我個人的 ~/.gemrc 還多設了兩個選項。裡面是這一行：
+
+    gem: --user --env-shebang --no-rdoc --no-ri
+
+其中第一個 `--user` 的意思是優先使用屬於使用者個人的 gems，而非系統的。
+也因此，我在執行 `gem install` 時是不需要 `sudo`，因為 gems 是安裝至
+~/.gem 底下，而非系統的路徑。我個人比較喜歡用這種方式管理我安裝的 gems，
+這樣就不會受到系統的影響，自己要修改 gems 來除錯時，也不會影響到其他人。
+
+第二個 `--env-shebang` 的意思則是，比方說 rake 這個 gem 有個 `rake` 的
+命令，這個程式本身是一個 Ruby 程式，因此也會有個 shebang。預設的行為下，
+這 shebang 會指向當時所使用的 Ruby 的完整路徑。這個問題是，Mac 的 
+[Homebrew][] 在每次更新 Ruby 時，完整路徑都會改變，因為路徑本身是含有
+版本資訊的。我不希望每次更新 Ruby，我就要重新更新 shebang，不如就直接用 
+`#!/usr/bin/env ruby` 吧！
+
+除此之外，還可以設非常多的設定。一些比較針對特定命令的，可以看特定命令的 
+help。比較無關某個命令的，則可以看 `gem help environment`。
+
+[Homebrew]: https://github.com/mxcl/homebrew
+
+<!--
+## 架設自己的 RubyGems 儲藏室
+
+原本所有的 RubyGems 套件，也就是 gems 都是放在 [RubyForge][]。不過 RubyForge 
+後來的運作狀況不是很好，使用者太多，速度變得很慢。再加上使用上不是很方便，
+步驟很多也不容易記得。後來 [qrush][] 因此用 Rails 開發了 GemCutter，目的是
+取代 RubyForge 許許多多功能中的其中一個，也就是放置儲存 gems 的功能。同時，
+它也是放置在 Github 的開源專案。
+
+後來 GemCutter 非常成功，不只把所有原本放在 RubyForge 的 gems 都複製到 
+GemCutter，原開發者也可以輕易取得自己的 gems 散佈權。最終所有的東西就全部
+合併進 RubyGems，同時正式把預設的伺服器從 RubyForge.org 改到 RubyGems.org。
+整個轉換過程非常地順利，沒有在開發自己的 gems 的人，可能甚至不會注意到
+改變，也不知道曾經存在過 GemCutter，只知道速度變快了。
+
+也因為整個計畫都是開源的，RubyGems 本身也一直都支援 `gem source` 來管理所有的
+伺服器位置。因此任何人都可以架設自己的 RubyGems.org，在上面放私有不公開的
+gems，只允許自己的機器去存取。或許也可以用這種方式來佈署自己的私有軟體吧。
+
+詳細的架設方式，請參考 [RubyGems.org 的源碼][rubygems-source]。
+
+[RubyForge]: http://rubyforge.org/
+[qrush]: https://github.com/qrush
+[rubygems-source]: https://github.com/rubygems/rubygems.org
+-->
 
 ## 簡單易用下的複雜性
 
@@ -172,7 +227,9 @@ Ruby 1.9 在把 RubyGems 納入核心時，甚至寫了一個叫 *gem_prelude* �
 [rip]: https://github.com/defunkt/rip
 [coral]: https://github.com/mislav/coral
 
+<!--
 ## 鑄造你的紅寶石
+-->
 
 ## 展望
 
