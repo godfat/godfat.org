@@ -38,15 +38,15 @@ Ruby 1.9 之後，由於已經被收錄至 Ruby 標準發行版中，就不需�
 
     gem update --system
 
-就可以自動升到最新的 RubyGems。不過不知道為什麼，有時候會有點問題，沒有
-辦法直接裝到好。這時候則需要再執行一次：
+就可以自動升到最新的 RubyGems。不過不知道為什麼，有時候會有點問題，
+沒辦法直接裝到好。這時候則需要再執行一次：
 
     update_rubygems
 
 就可以裝好了。由於 RubyGems 本身也可由 RubyGems 來散佈，因此要降級也是
 非常容易的。當然啦，通常我們並不需要降級，不過如果真的有點問題，像是某些
 版本的 Rails 會用到 RubyGems 內部的東西，因此在某些版本下可能會有問題。
-這種時候如果新版不適用，可能就必須要降級。
+這種時候如果新版不適用，可能就必須降級。
 
 降級的方法也很簡單，跟升級差不多。假設我們現在想要安裝 1.7.2，則先透過 
 RubyGems 本身安裝 RubyGems 1.7.2：
@@ -59,9 +59,9 @@ RubyGems 本身安裝 RubyGems 1.7.2：
 
 這邊的 `_1.7.2_` 是 RubyGems 的用來呼叫某個特定版本的 gem 的方式。例如假設
 我們電腦裡同時有 Rails 3.1.1 和 Rails 2.3.14，我們該怎麼使用 2.3.14 版本的 
-Rails? 正是 `rails _2.3.14_` 接著後面接原本的引數。所有的 gem 都可以透過這種
+Rails？正是 `rails _2.3.14_` 接著後面接原本的引數。所有的 gem 都可以透過這種
 方式選擇版本。其實我們在執行 `gem update --system` 時，他內部就是先執行 
-`gem install rubygems-update` 這樣會安裝最新版，然後自動跑 
+`gem install rubygems-update` 安裝最新版，接著自動跑 
 `update_rubygems`。因此也可以用這種方式升級 RubyGems。
 
 ## gem 命令
@@ -70,28 +70,28 @@ Rails? 正是 `rails _2.3.14_` 接著後面接原本的引數。所有的 gem �
 例如最常用的 `gem install`，`gem update` 和 `gem list`。其中的 
 install，update 和 list 就是 gem 本身的命令。每個 gem 命令也有各自
 不同的用法。詳細用法，可以透過 `gem help` 這個命令去查詢，例如 
-`gem help install` 或是 `gem help update`。他也可以拿來查詢自己的
+`gem help install` 或是 `gem help update`。它也可以拿來查詢自己的
 用法： `gem help help`。也可以列出所有的命令： `gem help commands`。
 
 每個不同的 gem 命令都可以接受各自不同的引數。例如平常我們使用 `gem list` 
-時，他會顯示所有電腦上安裝過的 gem。但如果我們想要看遠端的 gem，則需要用 
-`-r` 引數，表示我們只關心遠端（remote）的 gem，而非本地（local）的 gem。
+時，他會顯示所有電腦上安裝過的 gems。但如果我們想要看遠端的 gems，則需要用 
+`-r` 引數，表示我們只關心遠端（remote）的 gems，而非本地（local）的 gems。
 例如 `gem list -r rake` 可以列出 [rubygems.org][RubyGems] 上所有 
-rake 開頭的 gem。在新版本的 RubyGems 裡面，由於效率考量，只會印出最新的
-版本。如果需要察看之前的版本，例如某個 gem 新版有問題，想降級卻不知道應該
+rake 開頭的 gems。在新版本的 RubyGems 裡面，由於效率考量，只會印出最新的
+版本。如果需要察看之前的版本，例如某個新版的 gem 有問題，想降級卻不知道應該
 降到哪個版本時，就需要察看所有的版本。執行 `gem list -ra rake` 即可。
 其中 `-r` 的意思就是前述的 remote，而 `-a` 則是 all 的意思。
 
-如果說覺得其實我們只關心 rake，並不關心其他 rake 開頭的 gem，那我們可以
-用 regular expression. 使用 `gem list -ra '^rake$'` 即可，這樣就
-只會列出 rake 而非其他雜七雜八的 rake 開頭的 gem。
+如果覺得其實我們只關心 rake，並不關心其他 rake 開頭的 gem，那我們可以
+用 regular expression。使用 `gem list -ra '^rake$'` 即可，這樣就
+只會列出 rake 而非其他雜七雜八 rake 開頭的 gems。
 
-但不是所有的 `gem` 命令都支援 regular expression. 比方說如果我們升級了 
-rails, 然後想把舊版的 rails 刪掉。但這不是只要跑 `gem cleanup rails` 
+但不是所有的 `gem` 命令都支援 regular expression。比方說如果我們升級了 
+rails，然後想把舊版的 rails 刪掉。這不是只要跑 `gem cleanup rails` 
 就可以解決的，因為實際上 rails 比較接近一個 metagem，意思就是這個 gem 
 本身其實沒什麼東西，主要的東西反而是在這個 gem 的 dependency 上，
 也就是 activerecord，activesupport，actionpack，actionmailer 等等。
-假設我現在想刪除 rails 3.0.5，這時候我會跑這個來把所有的 dependency 全部清除：
+假設我現在想刪除 rails 3.0.5，這時我會跑這個來把所有的 dependency 全部清除：
 
     gem list '^active|^action|^rails' | sed -E 's/\(.+\)//' | xargs gem uninstall -v 3.0.5
 
@@ -118,22 +118,22 @@ rails, 然後想把舊版的 rails 刪掉。但這不是只要跑 `gem cleanup r
 
 使用這樣的運算子有兩個理由。一個是比起寫一個範圍要來得簡單，另一個是明確表示
 自己想要的版本究竟是什麼，但是差一點點無所謂！也因此有人提議這個運算子應該叫 
-approximate operator, 也就是近似運算子，如果中文可以這樣翻的話。
+approximate operator, 也就是近似運算子。
 
-另一方面，除了用 `gem` 命令管理 gem 以外，另一點很重要的是如何在 ruby runtime 
-裡選擇各種 gem 的版本了。這裡同樣可以使用各種版本的運算子。像是這樣：
+另一方面，除了用 `gem` 命令管理 gems 以外，另一點很重要的是如何在 ruby runtime 
+裡選擇各種 gems 的版本了。這裡同樣可以使用各種版本的運算子。像是：
 
     gem 'rake', '~>0.8.7'
     require 'rake'
 
 在第二行的 `require 'rake'`，會根據上次指定的版本限制，也就是第一行來選擇應該
-要讀入的 rake 版本。另外也可以用等於或是完全不寫運算子：
+讀入的 rake 版本。另外也可以用等於或是完全不寫運算子：
 
     gem 'rake', '=0.9.2' # 等價於下行：
     gem 'rake',  '0.9.2'
 
 不過由於 Rails 的版本控制有點混亂且複雜，單這樣寫往往還會有其他版本問題。
-也因此他們才特地開發了 [Bundler][] 來協助 Rails 3 管理這一團混亂。由於這
+也因此他們特地開發了 [Bundler][] 來協助 Rails 3 管理這一團混亂。由於這
 超出本篇範圍，這裡就不多討論。
 
 [appr-op]: https://github.com/rubygems/rubygems/pull/124
@@ -156,7 +156,7 @@ approximate operator, 也就是近似運算子，如果中文可以這樣翻的�
     gem: --user --env-shebang --no-rdoc --no-ri
 
 其中第一個 `--user` 的意思是優先使用屬於使用者個人的 gems，而非系統的。
-也因此，我在執行 `gem install` 時是不需要 `sudo`，因為 gems 是安裝至
+也因此，我在執行 `gem install` 時是不需要 `sudo`，因為 gems 是安裝至 
 ~/.gem 底下，而非系統的路徑。我個人比較喜歡用這種方式管理我安裝的 gems，
 這樣就不會受到系統的影響，自己要修改 gems 來除錯時，也不會影響到其他人。
 
@@ -214,8 +214,8 @@ Ruby 1.9 在把 RubyGems 納入核心時，甚至寫了一個叫 *gem_prelude* �
 開發者，並不願意付出啟動 RubyGems 所需要付出的運算成本。
 
 不幸的是，正因為 *gem_prelude* 不是完整的 RubyGems 實作，他並不會計算複雜的
-版本相依問題，因此在某些特定的情況下，會錯誤讀到非指定版本的 gem. 如果我們
-只用最新的 gem，或是電腦裡只安裝需要用到的 gem，則不會有這個問題。但如果同時
+版本相依問題，因此在某些特定的情況下，會錯誤讀到非指定版本的 gems。如果我們
+只用最新的 gems，或是電腦裡只安裝需要用到的 gems，則不會有這個問題。但如果同時
 安裝了許多版本，又指定了某些特定版本，*gem_prelude* 就有可能忽略到一些細節。
 
 這個問題對於 Rails 又特別嚴重，因為 Rails 常常會使用到各種套件的底層，
