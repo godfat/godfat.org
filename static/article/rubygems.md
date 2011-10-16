@@ -256,4 +256,8 @@ Ruby 2.0 的電腦，上面有沒有安裝 net/http？會不會被使用者移�
 應該使用 bundler 來更嚴格地管理版本，而不是仰賴一個根本不知道是什麼版本的
 標準程式庫。
 
+礙於篇幅，這篇只稍微談了一小部份的 RubyGems，也沒有提到如何製作自己的 gems。
+儘管如此，也希望這篇有成功讓大家更了解 RubyGems。希望大家都能開開心心地
+用 RubyGems 完成自己所需要完成的工作！
+
 [stdlibgem]: http://redmine.ruby-lang.org/projects/ruby/wiki/StdlibGem
