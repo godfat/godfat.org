@@ -6,7 +6,7 @@ Python 的 EasyInstall 或 pip，使用者只要很簡單地執行 `gem install 
 就可以把名叫 rake 的一套 Ruby 套件，從網路上安裝到電腦裡面。
 
 如同一般的套件管理系統，RubyGems 也有版本與相依性管理，要散佈自己所製作的
-套件給其他人下載也是很容易，幾個指令就可以完成了。
+套件（以下將以 gems 稱呼）給其他人下載也是很容易，幾個指令就可以完成了。
 
 RubyGems 大致可以分為兩個部份。一個是 gem 命令，另一個則是在 runtime 中
 管理可用的 gems 與其版本。在這篇淺談中，將不會介紹所有的功能與選項，
@@ -16,16 +16,16 @@ RubyGems 大致可以分為兩個部份。一個是 gem 命令，另一個則是
 
 ## 安裝
 
-在 Ruby 1.9 之前，RubyGems 需要額外安裝，因為它不是一個官方的套件。而在 
-Ruby 1.9 之後，由於已經被收錄至 Ruby 標準的發行版中，就不需要額外安裝了。
-差別只在於版本可能比較舊。不過這沒關係，因為 RubyGems 本身也可以由 RubyGems 
+在 Ruby 1.9 之前，RubyGems 需要額外安裝，因為它不是官方的套件。而在 
+Ruby 1.9 之後，由於已經被收錄至 Ruby 標準發行版中，就不需額外安裝了。
+差別在於版本可能比較舊。不過沒關係，因為 RubyGems 本身也可以由 RubyGems 
 散佈，因此只要先取得一份可以執行的 RubyGems，接著要升級甚至降級都是很容易的。
 
 在 Mac OS X 中，雖然 Ruby 的版本是 1.8.7，但是 RubyGems 也已經預先裝好了。
-而在 Linux 上的話，各個發行版的 Linux 上的套件管理系統，如果是 Ruby 1.9 
-同樣不需要特別安裝 RubyGems，而如果是 Ruby 1.8 的話，通常 Linux 上的套件
-管理系統也有提供。真的沒有的話，可以下載 [tarball][download-rubygems]，
-解開來後跑 `ruby setup.rb` 就可以裝起來了。至於 Windows 則可直接使用 
+而在 Linux 上的話，使用該 Linux 發行版的套件管理系統即可。如果是 Ruby 1.9 
+不需要特別安裝 RubyGems，而如果是 Ruby 1.8 的話，通常 Linux 上的套件
+管理系統也有提供 RubyGems。真的沒有的話，可以下載 [tarball][download-rubygems]，
+解開後跑 `ruby setup.rb` 就可以裝起來了。至於 Windows 則可直接使用 
 [RubyInstaller][download-rubyinstaller]，不管是 1.9 或是 1.8，RubyGems 
 都已經被包在裡面了。
 
