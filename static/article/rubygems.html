@@ -21,7 +21,7 @@
 <p>然後用 1.7.2 的 rubygems-update 來執行：</p>
 <pre><code>update_rubygems _1.7.2_
 </code></pre>
-<p>這邊的 <code>_1.7.2_</code> 是 RubyGems 的用來呼叫某個特定版本的 gem 的方式。例如假設我們電腦裡同時有 Rails 3.1.1 和 Rails 2.3.14，我們該怎麼使用 2.3.14 版本的 Rails？正是 <code>rails _2.3.14_</code> 接著後面接原本的引數。所有的 gem 都可以透過這種方式選擇版本。其實我們在執行 <code>gem update --system</code> 時，他內部就是先執行 <code>gem install rubygems-update</code> 安裝最新版，接著自動跑 <code>update_rubygems</code>。因此也可以用這種方式升級 RubyGems。</p>
+<p>這邊的 <code>_1.7.2_</code> 是 RubyGems 用來呼叫某個特定版本 gem 的方式。假設我們電腦裡同時有 Rails 3.1.1 和 Rails 2.3.14，我們該怎麼使用 2.3.14 版本的 Rails？正是 <code>rails _2.3.14_</code> 接著後面接原本的引數。所有的 gem 都可以透過這種方式選擇版本。其實我們在執行 <code>gem update --system</code> 時，他內部就是先執行 <code>gem install rubygems-update</code> 安裝最新版，接著自動跑 <code>update_rubygems</code>。因此也可以用這種方式升級 RubyGems。</p>
 <h2 id="gem-">gem 命令</h2>
 <p>安裝 RubyGems 後可以使用 <code>gem</code> 命令。而 <code>gem</code> 本身也包含其他的命令，例如最常用的 <code>gem install</code>，<code>gem update</code> 和 <code>gem list</code>。其中的 install，update 和 list 就是 gem 本身的命令。每個 gem 命令也有各自不同的用法。詳細用法，可以透過 <code>gem help</code> 這個命令去查詢，例如 <code>gem help install</code> 或是 <code>gem help update</code>。它也可以拿來查詢自己的用法： <code>gem help help</code>。也可以列出所有的命令： <code>gem help commands</code>。</p>
 <p>每個不同的 gem 命令都可以接受各自不同的引數。例如平常我們使用 <code>gem list</code> 時，他會顯示所有電腦上安裝過的 gems。但如果我們想要看遠端的 gems，則需要用 <code>-r</code> 引數，表示我們只關心遠端（remote）的 gems，而非本地（local）的 gems。例如 <code>gem list -r rake</code> 可以列出 <a href="https://rubygems.org">rubygems.org</a> 上所有 rake 開頭的 gems。在新版本的 RubyGems 裡面，由於效率考量，只會印出最新的版本。如果需要察看之前的版本，例如某個新版的 gem 有問題，想降級卻不知道應該降到哪個版本時，就需要察看所有的版本。執行 <code>gem list -ra rake</code> 即可。其中 <code>-r</code> 的意思就是前述的 remote，而 <code>-a</code> 則是 all 的意思。</p>
