@@ -57,12 +57,12 @@ RubyGems 本身安裝 RubyGems 1.7.2：
 
     update_rubygems _1.7.2_
 
-這邊的 `_1.7.2_` 是 RubyGems 的用來呼叫某個特定版本的 gem 的方式。例如假設
-我們電腦裡同時有 Rails 3.1.1 和 Rails 2.3.14，我們該怎麼使用 2.3.14 版本的 
-Rails？正是 `rails _2.3.14_` 接著後面接原本的引數。所有的 gem 都可以透過這種
-方式選擇版本。其實我們在執行 `gem update --system` 時，他內部就是先執行 
-`gem install rubygems-update` 安裝最新版，接著自動跑 
-`update_rubygems`。因此也可以用這種方式升級 RubyGems。
+這邊的 `_1.7.2_` 是 RubyGems 用來呼叫某個特定版本 gem 的方式。假設我們電腦裡
+同時有 Rails 3.1.1 和 Rails 2.3.14，我們該怎麼使用 2.3.14 版本的 Rails？正是 
+`rails _2.3.14_` 接著後面接原本的引數。所有的 gem 都可以透過這種方式選擇版本。
+其實我們在執行 `gem update --system` 時，他內部就是先執行 
+`gem install rubygems-update` 安裝最新版，接著自動跑 `update_rubygems`。
+因此也可以用這種方式升級 RubyGems。
 
 ## gem 命令
 
