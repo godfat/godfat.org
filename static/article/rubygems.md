@@ -121,7 +121,7 @@ rails，然後想把舊版的 rails 刪掉。這不是只要跑 `gem cleanup rai
 approximate operator, 也就是近似運算子。
 
 另一方面，除了用 `gem` 命令管理 gems 以外，另一點很重要的是如何在 ruby runtime 
-裡選擇各種 gems 的版本了。這裡同樣可以使用各種版本的運算子。像是：
+裡選擇各種 gem 的版本了。這裡同樣可以使用各種版本的運算子。像是：
 
     gem 'rake', '~>0.8.7'
     require 'rake'
@@ -167,7 +167,7 @@ approximate operator, 也就是近似運算子。
 版本資訊的。我不希望每次更新 Ruby，我就要重新更新 shebang，不如就直接用 
 `#!/usr/bin/env ruby` 吧！
 
-除此之外，還可以設非常多的設定。一些比較針對特定命令的，可以看特定命令的 
+除此之外，還有非常多不同的設定。一些比較針對特定命令的，可以看特定命令的 
 help。比較無關某個命令的，則可以看 `gem help environment`。
 
 [Homebrew]: https://github.com/mxcl/homebrew

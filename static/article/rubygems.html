@@ -36,7 +36,7 @@
 </code></pre>
 <p>這裡 <code>&lt;3</code> 的意思是任何版本小於 3 的版本。當然有小於運算子，也就有大於運算子，也同樣有小於等於運算子： <code>&lt;=</code> 和大於等於運算子： <code>&lt;=</code>。除此之外，還有一個比較不尋常，可能只有 RubyGems 在用的 <code>~&gt;</code> 運算子。目前這運算子沒有一個正式的名稱，應該用什麼名字還在<a href="https://github.com/rubygems/rubygems/pull/124">討論當中</a>。此運算子的意思是不在乎最小位數的數字。例如寫作 <code>~&gt;3.0</code> 表示任何 3.x 都可以接受。因此實際上也等價於 <code>~&gt;3.5</code>。用大於小於來表示的話，則是 <em>3 &lt;= the version &lt; 4</em>。</p>
 <p>使用這樣的運算子有兩個理由。一個是比起寫一個範圍要來得簡單，另一個是明確表示自己想要的版本究竟是什麼，但是差一點點無所謂！也因此有人提議這個運算子應該叫 approximate operator, 也就是近似運算子。</p>
-<p>另一方面，除了用 <code>gem</code> 命令管理 gems 以外，另一點很重要的是如何在 ruby runtime 裡選擇各種 gems 的版本了。這裡同樣可以使用各種版本的運算子。像是：</p>
+<p>另一方面，除了用 <code>gem</code> 命令管理 gems 以外，另一點很重要的是如何在 ruby runtime 裡選擇各種 gem 的版本了。這裡同樣可以使用各種版本的運算子。像是：</p>
 <pre><code>gem 'rake', '~&gt;0.8.7'
 require 'rake'
 </code></pre>
@@ -55,7 +55,7 @@ gem 'rake',  '0.9.2'
 </code></pre>
 <p>其中第一個 <code>--user</code> 的意思是優先使用屬於使用者個人的 gems，而非系統的。也因此，我在執行 <code>gem install</code> 時是不需要 <code>sudo</code>，因為 gems 是安裝至 ~/.gem 底下，而非系統的路徑。我個人比較喜歡用這種方式管理我安裝的 gems，這樣就不會受到系統的影響，自己要修改 gems 來除錯時，也不會影響到其他人。</p>
 <p>第二個 <code>--env-shebang</code> 的意思則是，比方說 rake 這個 gem 有個 <code>rake</code> 的命令，這個程式本身是一個 Ruby 程式，因此也會有個 shebang。預設的行為下，這 shebang 會指向當時所使用的 Ruby 的完整路徑。這個問題是，Mac 的 <a href="https://github.com/mxcl/homebrew">Homebrew</a> 在每次更新 Ruby 時，完整路徑都會改變，因為路徑本身是含有版本資訊的。我不希望每次更新 Ruby，我就要重新更新 shebang，不如就直接用 <code>#!/usr/bin/env ruby</code> 吧！</p>
-<p>除此之外，還可以設非常多的設定。一些比較針對特定命令的，可以看特定命令的 help。比較無關某個命令的，則可以看 <code>gem help environment</code>。</p>
+<p>除此之外，還有非常多不同的設定。一些比較針對特定命令的，可以看特定命令的 help。比較無關某個命令的，則可以看 <code>gem help environment</code>。</p>
 <!--
 ## 架設自己的 RubyGems 儲藏室
 
