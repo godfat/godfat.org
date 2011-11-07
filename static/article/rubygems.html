@@ -18,7 +18,7 @@
 <p>降級的方法也很簡單，跟升級差不多。假設我們現在想要安裝 1.7.2，則先透過 RubyGems 本身安裝 RubyGems 1.7.2：</p>
 <pre><code>gem install -v 1.7.2 rubygems-update
 </code></pre>
-<p>然後用 1.7.2 的 rubygems-update 來執行：</p>
+<p>再用 1.7.2 的 update_rubygems 來執行：</p>
 <pre><code>update_rubygems _1.7.2_
 </code></pre>
 <p>這邊的 <code>_1.7.2_</code> 是 RubyGems 用來呼叫某個特定版本 gem 的方式。假設我們電腦裡同時有 Rails 3.1.1 和 Rails 2.3.14，我們該怎麼使用 2.3.14 版本的 Rails？正是 <code>rails _2.3.14_</code> 接著後面接原本的引數。所有的 gem 都可以透過這種方式選擇版本。其實我們在執行 <code>gem update --system</code> 時，他內部就是先執行 <code>gem install rubygems-update</code> 安裝最新版，接著自動跑 <code>update_rubygems</code>。因此也可以用這種方式升級 RubyGems。</p>
@@ -34,7 +34,7 @@
 <p>除了指定特定的版本，如前文提到的 <code>gem install -v 1.7.2 rubygems-update</code> 和 <code>gem uninstall -v 3.0.5 rails</code> 外，也可以指定一個範圍的版本。比方說如果需要安裝「最新的」 Rails 2 的話，可以執行：</p>
 <pre><code>gem install -v '&lt;3' rails
 </code></pre>
-<p>這裡 <code>&lt;3</code> 的意思是任何版本小於 3 的版本。當然有小於運算子，也就會有大於運算子，也同樣有小於等於運算子： <code>&lt;=</code> 和大於等於運算子： <code>&lt;=</code>。除此之外，還有一個比較不尋常，可能只有 RubyGems 在用的 <code>~&gt;</code> 運算子。目前這運算子沒有一個正式的名稱，應該用什麼名字還在<a href="https://github.com/rubygems/rubygems/pull/124">討論當中</a>。此運算子的意思是不在乎最小位數的數字。例如寫作 <code>~&gt;3.0</code> 表示任何 3.x 都可以接受。因此實際上也等價於 <code>~&gt;3.5</code>。用大於小於來表示的話，則是 <em>3 &lt;= the version &lt; 4</em>。</p>
+<p>這裡 <code>&lt;3</code> 的意思是任何版本小於 3 的版本。當然有小於運算子，也就有大於運算子，也同樣有小於等於運算子： <code>&lt;=</code> 和大於等於運算子： <code>&lt;=</code>。除此之外，還有一個比較不尋常，可能只有 RubyGems 在用的 <code>~&gt;</code> 運算子。目前這運算子沒有一個正式的名稱，應該用什麼名字還在<a href="https://github.com/rubygems/rubygems/pull/124">討論當中</a>。此運算子的意思是不在乎最小位數的數字。例如寫作 <code>~&gt;3.0</code> 表示任何 3.x 都可以接受。因此實際上也等價於 <code>~&gt;3.5</code>。用大於小於來表示的話，則是 <em>3 &lt;= the version &lt; 4</em>。</p>
 <p>使用這樣的運算子有兩個理由。一個是比起寫一個範圍要來得簡單，另一個是明確表示自己想要的版本究竟是什麼，但是差一點點無所謂！也因此有人提議這個運算子應該叫 approximate operator, 也就是近似運算子。</p>
 <p>另一方面，除了用 <code>gem</code> 命令管理 gems 以外，另一點很重要的是如何在 ruby runtime 裡選擇各種 gems 的版本了。這裡同樣可以使用各種版本的運算子。像是：</p>
 <pre><code>gem 'rake', '~&gt;0.8.7'

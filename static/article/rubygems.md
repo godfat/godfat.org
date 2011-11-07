@@ -53,7 +53,7 @@ RubyGems 本身安裝 RubyGems 1.7.2：
 
     gem install -v 1.7.2 rubygems-update
 
-然後用 1.7.2 的 rubygems-update 來執行：
+再用 1.7.2 的 update_rubygems 來執行：
 
     update_rubygems _1.7.2_
 
@@ -109,7 +109,7 @@ rails，然後想把舊版的 rails 刪掉。這不是只要跑 `gem cleanup rai
 
     gem install -v '<3' rails
 
-這裡 `<3` 的意思是任何版本小於 3 的版本。當然有小於運算子，也就會有大於運算子，
+這裡 `<3` 的意思是任何版本小於 3 的版本。當然有小於運算子，也就有大於運算子，
 也同樣有小於等於運算子： `<=` 和大於等於運算子： `<=`。除此之外，還有一個比較
 不尋常，可能只有 RubyGems 在用的 `~>` 運算子。目前這運算子沒有一個正式的名稱，
 應該用什麼名字還在[討論當中][appr-op]。此運算子的意思是不在乎最小位數的數字。
