@@ -4,6 +4,7 @@ body{
   border-width: thin;
   background-color: #eee;
   color: #111;
+  letter-spacing: 0.05em;
   font-family: 'DejaVu Sans', 'Bitstream Vera Sans',
                'Lucida Grande', 'Arial',
                'Hiragino Maru Gothic Pro', sans-serif;
@@ -11,13 +12,16 @@ body{
 h1{
   font-size: 2em;
   font-family: 'Covered By Your Grace', cursive;
+  letter-spacing: 0;
 }
 h2{
   font-size: 2em;
   font-family: 'Raleway', sans-serif;
+  letter-spacing: 0;
 }
 h3{
   font-family: 'Raleway', sans-serif;
+  letter-spacing: 0;
 }
 hr{
   margin: 0 0 2em 0;
