@@ -15,7 +15,7 @@
     <meta property="fb:app_id" content="122929524388492"/>
 
     <b:include data='blog' name='all-head-content'/>
-    <link rel='icon' type='image/png' href='http://godfat.org/image/favicon.png'/>
+    <link rel='icon' type='image/png' href='http://www.godfat.org/image/favicon.png'/>
     <title><data:blog.pageTitle/></title>
     <b:skin><![CDATA[/*
 -----------------------------------------------
