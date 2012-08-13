@@ -454,6 +454,9 @@ body#layout #header {
   </head>
 
   <body>
+    <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar'/>
+    </b:section>
 
     <div id='outer-wrapper'>
 
