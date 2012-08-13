@@ -1,0 +1,106 @@
+
+pre code {
+  display: block; padding: 0.5em;
+  background: #141414; color: #F8F8F8;
+  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Consolas", "Lucida Console", "Courier New", monospace;
+  font-size: 1em;
+  overflow: auto;
+  max-width: 850px;
+}
+
+pre .shebang,
+pre .comment,
+pre .template_comment,
+pre .javadoc {
+  color: #777777;
+  font-style: italic;
+}
+
+pre .keyword,
+pre .tag,
+pre .tex .command,
+pre .request,
+pre .status,
+pre .clojure .built_in,
+pre .clojure .attribute {
+  color: #CDA869;
+}
+
+pre .constant,
+pre .sub .identifier,
+pre .pi,
+pre .decorator,
+pre .built_in,
+pre .tex .special,
+pre .smalltalk .class,
+pre .css .tag,
+pre .javadoctag,
+pre .yardoctag,
+pre .phpdoc {
+  color: #7587A6;
+}
+
+pre .string,
+pre .tag .value,
+pre .cdata,
+pre .filter .argument,
+pre .attr_selector,
+pre .apache .cbracket,
+pre .date {
+  color: #8F9D6A;
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .number {
+  color: #CF6A4C;
+}
+
+pre .variable,
+pre .vbscript,
+pre .literal {
+  color: #F9EE98;
+}
+
+pre .regexp {
+  color: #E9C062;
+}
+
+pre .title{
+  color: #9B703F;
+}
+
+pre .inheritance,
+pre .parent{
+  color: #9B5C2E;
+  font-style: italic;
+}
+
+pre .haskell .type{
+  color: #DAD085;
+}
+
+pre .sub .keyword,
+pre .method,
+pre .list .title,
+pre .nginx .title,
+pre .css .rules .property,
+pre .css .id {
+  color: #FFFFB6;
+}
+
+pre .hexcolor {
+  color: #C6C5FE;
+}
+
+pre .subst {
+  color: #DAEFA3;
+}
+
+pre .css .class {
+  color: #FFFFFF;
+}
+
+pre .tex .formula {
+  opacity: 0.7;
+}
