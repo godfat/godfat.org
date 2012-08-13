@@ -17,6 +17,9 @@
     <b:include data='blog' name='all-head-content'/>
     <link rel='icon' type='image/png' href='http://www.godfat.org/image/favicon.png'/>
     <title><data:blog.pageTitle/></title>
+    <script src='http://www.godfat.org/script/highlight.pack.js' type='text/javascript'/>
+    <link href='http://www.godfat.org/style/twilight.css' rel='stylesheet'/>
+    <script>hljs.initHighlightingOnLoad();</script>
     <b:skin><![CDATA[/*
 -----------------------------------------------
 Blogger Template Style
