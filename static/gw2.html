@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+      function to2d(num){
+        if(num < 10)
+          return '0' + num.toString();
+        else
+          return num.toString();
+      };
+
+      function start(){
+        document.getElementById('btn').disabled = true;
+
+        var img = [
+          'https://wiki.guildwars2.com/images/d/da/Squad_Attack_Order.png',
+          'https://wiki.guildwars2.com/images/2/27/Squad_Defend_Order.png',
+          'https://wiki.guildwars2.com/images/0/06/Squad_Rally_Order.png',
+          'https://wiki.guildwars2.com/images/2/26/Personal_waypoint_%28map_icon%29.png'];
+
+        var s = 0, w = 1, n = 2, e = 3;
+
+        [s, w, n, e,
+         s, n, w, e,
+         s, w, n, e,
+         s, n, w, e,
+         s, w, n].forEach(function(ele, idx){
+          window.setTimeout(function(){
+            document.getElementById('btn').innerHTML =
+              '<img style="width:200px; height:200px" src="'+ img[ele] +'">';
+            document.getElementById('beep').play();
+          }, (30 * 1000 * (idx + 1)) - 5 * 1000);
+        });
+
+        var timer = document.getElementById('timer');
+        var tick  = 0;
+        window.setInterval(function(){
+          tick += 1;
+          var min = ~~(tick / 60);
+          var sec =   (tick % 60);
+          timer.innerHTML = to2d(min) + ':' + to2d(sec);
+        }, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="wrap" style="text-align:center">
+      <div id="timer" style="font-size:40px">00:00</div>
+      <div>
+        <button id="btn"
+                style="width:100%; height:250px; font-size:50px"
+                autocomplete="off" onclick="start()">START</button>
+      </div>
+      <div>
+        <audio id="beep"
+               src="http://freesound.org/data/previews/26/26777_128404-lq.mp3"
+               controls>
+      </audio>
+    </div>
+  </body>
+</html>
