@@ -28,7 +28,7 @@
         document.getElementById('start').disabled = true;
         document.getElementById('reset').disabled = false;
 
-        var img = [
+        var src = [
           'https://wiki.guildwars2.com/images/d/da/Squad_Attack_Order.png',
           'https://wiki.guildwars2.com/images/2/27/Squad_Defend_Order.png',
           'https://wiki.guildwars2.com/images/0/06/Squad_Rally_Order.png',
@@ -41,11 +41,16 @@
          s, w, n, e,
          s, n, w, e,
          s, w, n].forEach(function(ele, idx){
-          timeouts.push(window.setTimeout(function(){
+          var img = window.setTimeout(function(){
             document.getElementById('start').innerHTML =
-              '<img style="width:200px; height:200px" src="'+ img[ele] +'">';
+              '<img style="width:200px; height:200px" src="'+ src[ele] +'">';
+          }, (30 * 1000 * (idx + 0)) + 5 * 1000);
+
+          var beep = window.setTimeout(function(){
             document.getElementById('beep').play();
-          }, (30 * 1000 * (idx + 1)) - 5 * 1000));
+          }, (30 * 1000 * (idx + 1)) - 5 * 1000);
+
+          timeouts.push(img, beep);
         });
 
         var timer = document.getElementById('timer');
