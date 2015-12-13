@@ -4,6 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript">
+      var timeouts = [], interval = null;
+      var timerText = null, startText = null;
+
       function to2d(num){
         if(num < 10)
           return '0' + num.toString();
@@ -11,8 +14,19 @@
           return num.toString();
       };
 
+      function reset(){
+        var start = document.getElementById('start')
+        start.disabled = false;
+        start.innerHTML = startText;
+        document.getElementById('timer').innerHTML = timerText;
+        document.getElementById('reset').disabled = true;
+        if(interval) window.clearInterval(interval);
+        timeouts.forEach(window.clearTimeout);
+      };
+
       function start(){
-        document.getElementById('btn').disabled = true;
+        document.getElementById('start').disabled = true;
+        document.getElementById('reset').disabled = false;
 
         var img = [
           'https://wiki.guildwars2.com/images/d/da/Squad_Attack_Order.png',
@@ -27,16 +41,16 @@
          s, w, n, e,
          s, n, w, e,
          s, w, n].forEach(function(ele, idx){
-          window.setTimeout(function(){
-            document.getElementById('btn').innerHTML =
+          timeouts.push(window.setTimeout(function(){
+            document.getElementById('start').innerHTML =
               '<img style="width:200px; height:200px" src="'+ img[ele] +'">';
             document.getElementById('beep').play();
-          }, (30 * 1000 * (idx + 1)) - 5 * 1000);
+          }, (30 * 1000 * (idx + 1)) - 5 * 1000));
         });
 
         var timer = document.getElementById('timer');
         var tick  = 0;
-        window.setInterval(function(){
+        interval = window.setInterval(function(){
           tick += 1;
           var min = ~~(tick / 60);
           var sec =   (tick % 60);
@@ -49,16 +63,25 @@
     <div id="wrap" style="text-align:center">
       <div id="timer" style="font-size:40px">00:00</div>
       <div>
-        <button id="btn"
+        <button id="start"
                 style="width:100%; height:250px; font-size:50px"
                 autocomplete="off" onclick="start()">START</button>
       </div>
       <div>
         <audio id="beep"
                src="http://freesound.org/data/previews/26/26777_128404-lq.mp3"
-               controls>
+               controls="controls">
         </audio>
       </div>
+      <div>
+        <button id="reset"
+                autocomplete="off" onclick="reset()"
+                disabled="disabled">RESET</button>
+      </div>
     </div>
+    <script type="text/javascript">
+      timerText = document.getElementById('timer').innerHTML;
+      startText = document.getElementById('start').innerHTML;
+    </script>
   </body>
 </html>
