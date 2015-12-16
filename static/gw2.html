@@ -45,11 +45,9 @@
          s, w, n].forEach(function(ele, idx){
           var img = window.setTimeout(function(){
             document.getElementById('start').innerHTML =
-              '<span style="font-size:50px">' + han[ele] + '</span>' +
-              '<img style="width:200px; height:200px;' +
-                         ' vertical-align:middle" src="'+ src[ele] + '">' +
-              '<span style="font-size:50px">' + ele + '</span>';
-          }, (30 * 1000 * (idx + 0)) + 5 * 1000);
+              '<span style="font-size:50px; display:inline-block">' + han[ele] + '<br>' + ele + '</span>' +
+              '<img style="width:200px; height:200px; vertical-align:-1em" src="'+ src[ele] + '">';
+          }, (30 * 1000 * (idx + 0)) + 0 * 1000);
 
           var beep = window.setTimeout(function(){
             document.getElementById('beep').play();
