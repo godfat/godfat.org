@@ -34,6 +34,9 @@ li{
   margin: 0.15em;
   padding-top: 0.3em;
 }
+.del{
+  text-decoration: line-through;
+}
 img{
   border: 0;
 }
