@@ -8,9 +8,19 @@ body{
                'Lucida Grande', 'Arial',
                'Hiragino Maru Gothic Pro', sans-serif;
 }
-.proj, .date{
+.project-list li > a, .date{
   font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
                'Monaco', 'Consolas', 'Lucida Console', monospace;
+}
+.project-list li > a,
+.project-list li > span {
+  display: inline-block;
+}
+.project-list li > a {
+  width: 180px;
+}
+.project-list li > span {
+  width: calc(100% - 180px - 1em);
 }
 h1{
   font-size: 2em;
@@ -54,9 +64,6 @@ a:visited{
 }
 .title{
   letter-spacing: 0.05em;
-}
-.desc{
-  font-size: 0.9em;
 }
 .date{
   padding-right: 1em;
