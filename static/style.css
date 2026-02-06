@@ -8,18 +8,18 @@ body{
                'Lucida Grande', 'Arial',
                'Hiragino Maru Gothic Pro', sans-serif;
 }
-.project-list li > a, .date{
+.project li > a, .date{
   font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
                'Monaco', 'Consolas', 'Lucida Console', monospace;
 }
-.project-list li > a,
-.project-list li > span {
+.project li > a,
+.project li > span {
   display: inline-block;
 }
-.project-list li > a {
+.project li > a {
   width: 180px;
 }
-.project-list li > span {
+.project li > span {
   width: calc(100% - 180px - 1em);
 }
 h1{
