@@ -25,7 +25,7 @@ body{
 .project li > span {
   display: inline-block;
 }
-.project li > a {
+.project li > span:first-of-type {
   width: 180px;
 }
 h1{
