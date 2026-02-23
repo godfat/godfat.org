@@ -28,6 +28,9 @@ body{
 .project li > span:first-of-type {
   width: 180px;
 }
+.programming-language li > span:first-of-type {
+  width: 360px;
+}
 h1{
   font-size: 2em;
   font-family: 'Covered By Your Grace', cursive;
